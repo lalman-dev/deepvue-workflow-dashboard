@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "wf_001",
+    "name": "Forex Onboarding KYC (Bangalore)",
+    "status": "archived",
+    "nodes": 12,
+    "last_modified": "2025-11-13T16:59:18Z",
+    "description": "Forex platform user KYC \u2014 geolocation + source-of-funds + adverse media"
+  },
+  {
+    "id": "wf_002",
+    "name": "Driver KYC (Delhi NCR)",
+    "status": "published",
+    "nodes": 14,
+    "last_modified": "2026-03-01T08:31:51Z",
+    "description": "Mobility platform driver onboarding \u2014 DL + Aadhaar + criminal record check"
+  },
+  {
+    "id": "wf_003",
+    "name": "Healthcare Vendor BGV (Retail)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2025-09-09T12:25:34Z",
+    "description": "Healthcare ecosystem vendor verification \u2014 license + financials + compliance"
+  },
+  {
+    "id": "wf_004",
+    "name": "Signup Fraud Detection (Tier-2)",
+    "status": "published",
+    "nodes": 8,
+    "last_modified": "2026-02-09T08:11:04Z",
+    "description": "Device + IP + velocity checks for new user signup flows"
+  },
+  {
+    "id": "wf_005",
+    "name": "Lending Underwriter Flow (Tier-1)",
+    "status": "draft",
+    "nodes": 19,
+    "last_modified": "2026-03-07T22:55:20Z",
+    "description": "Lending underwriting \u2014 credit bureau + bank statement analysis + employment"
+  },
+  {
+    "id": "wf_006",
+    "name": "Programmatic KYC (Tier-3)",
+    "status": "draft",
+    "nodes": 8,
+    "last_modified": "2025-11-14T13:19:21Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_007",
+    "name": "Property Buyer KYC (Standard)",
+    "status": "draft",
+    "nodes": 10,
+    "last_modified": "2025-12-23T06:15:20Z",
+    "description": "Real estate buyer due diligence \u2014 identity + source-of-funds + sanctions"
+  },
+  {
+    "id": "wf_008",
+    "name": "Employee BGV (Hyderabad)",
+    "status": "archived",
+    "nodes": 15,
+    "last_modified": "2025-11-30T04:58:34Z",
+    "description": "Background verification for hiring \u2014 education, employment, criminal, address"
+  },
+  {
+    "id": "wf_009",
+    "name": "Signup Fraud Detection (Express)",
+    "status": "published",
+    "nodes": 7,
+    "last_modified": "2026-04-16T03:05:01Z",
+    "description": "Device + IP + velocity checks for new user signup flows"
+  },
+  {
+    "id": "wf_010",
+    "name": "Risk Signal Screening v2",
+    "status": "archived",
+    "nodes": 7,
+    "last_modified": "2026-01-02T03:01:14Z",
+    "description": "Device + behavioral signal screening for high-risk transactions"
+  },
+  {
+    "id": "wf_011",
+    "name": "Forex Exchange Enhanced KYC \u2014 Tier-2 / Tier-3 City Variant with Geolocation, Source-of-Funds, and Adverse Media Scan",
+    "status": "draft",
+    "nodes": 15,
+    "last_modified": "2026-05-26T18:10:00Z",
+    "description": "Enhanced KYC for crypto/forex platform onboarding \u2014 geolocation + source-of-funds + adverse media"
+  },
+  {
+    "id": "wf_012",
+    "name": "Forex Onboarding KYC (Web-only)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2026-03-08T19:48:21Z",
+    "description": "Forex platform user KYC \u2014 geolocation + source-of-funds + adverse media"
+  },
+  {
+    "id": "wf_013",
+    "name": "Vendor Annual Re-screening",
+    "status": "draft",
+    "nodes": 0,
+    "last_modified": "2026-05-19T12:35:00Z",
+    "description": "Annual re-verification of existing vendors \u2014 not started, awaiting requirements lock"
+  },
+  {
+    "id": "wf_014",
+    "name": "Property Buyer KYC (Tier-3)",
+    "status": "published",
+    "nodes": 9,
+    "last_modified": "2025-11-14T11:55:34Z",
+    "description": "Real estate buyer due diligence \u2014 identity + source-of-funds + sanctions"
+  },
+  {
+    "id": "wf_015",
+    "name": "Quick KYC (Deprecated)",
+    "status": "archived",
+    "nodes": 5,
+    "last_modified": "2027-03-15T15:30:00Z",
+    "description": "Lightweight KYC \u2014 deprecated in favor of Programmatic KYC (API-only)"
+  },
+  {
+    "id": "wf_016",
+    "name": "Forex Onboarding KYC v3",
+    "status": "draft",
+    "nodes": 17,
+    "last_modified": "2026-02-21T16:09:48Z",
+    "description": "Forex platform user KYC \u2014 geolocation + source-of-funds + adverse media"
+  },
+  {
+    "id": "wf_017",
+    "name": "Risk Signal Screening (Chennai)",
+    "status": "archived",
+    "nodes": 11,
+    "last_modified": "2025-11-05T14:37:25Z",
+    "description": "Device + behavioral signal screening for high-risk transactions"
+  },
+  {
+    "id": "wf_018",
+    "name": "Vendor KYB (Express)",
+    "status": "draft",
+    "nodes": 12,
+    "last_modified": "2026-03-04T10:15:27Z",
+    "description": "Vendor verification \u2014 entity + financials + sanctions screening"
+  },
+  {
+    "id": "wf_019",
+    "name": "Driver KYC (Pilot)",
+    "status": "published",
+    "nodes": 9,
+    "last_modified": "2026-04-09T05:50:03Z",
+    "description": "Mobility platform driver onboarding \u2014 DL + Aadhaar + criminal record check"
+  },
+  {
+    "id": "wf_020",
+    "name": "Insurance Underwriter (Pilot)",
+    "status": "published",
+    "nodes": 14,
+    "last_modified": "2025-09-18T17:43:30Z",
+    "description": "Insurance underwriting \u2014 medical declaration + identity + financial"
+  },
+  {
+    "id": "wf_021",
+    "name": "Healthcare Vendor BGV (Pilot)",
+    "status": "draft",
+    "nodes": 13,
+    "last_modified": "2026-01-12T19:03:19Z",
+    "description": "Healthcare ecosystem vendor verification \u2014 license + financials + compliance"
+  },
+  {
+    "id": "wf_022",
+    "name": "Healthcare Vendor BGV (Q1)",
+    "status": "published",
+    "nodes": 13,
+    "last_modified": "2025-10-08T10:06:07Z",
+    "description": "Healthcare ecosystem vendor verification \u2014 license + financials + compliance"
+  },
+  {
+    "id": "wf_023",
+    "name": "Crypto Exchange KYC v2",
+    "status": "draft",
+    "nodes": 18,
+    "last_modified": "2025-12-24T19:41:10Z",
+    "description": "Crypto exchange user KYC \u2014 chain analysis + sanctions + behavioral risk"
+  },
+  {
+    "id": "wf_024",
+    "name": "Risk Signal Screening (Deep Diligence)",
+    "status": "published",
+    "nodes": 9,
+    "last_modified": "2026-05-26T06:47:57Z",
+    "description": "Device + behavioral signal screening for high-risk transactions"
+  },
+  {
+    "id": "wf_025",
+    "name": "DigiLocker Fetch Flow (Q4)",
+    "status": "published",
+    "nodes": 8,
+    "last_modified": "2026-03-22T13:11:27Z",
+    "description": "DigiLocker document fetch and validation workflow"
+  },
+  {
+    "id": "wf_026",
+    "name": "Property Buyer KYC (Bangalore)",
+    "status": "draft",
+    "nodes": 10,
+    "last_modified": "2025-10-13T21:00:15Z",
+    "description": "Real estate buyer due diligence \u2014 identity + source-of-funds + sanctions"
+  },
+  {
+    "id": "wf_027",
+    "name": "Forex Onboarding KYC (2025)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2025-12-13T02:49:24Z",
+    "description": "Forex platform user KYC \u2014 geolocation + source-of-funds + adverse media"
+  },
+  {
+    "id": "wf_028",
+    "name": "Risk Signal Screening (Q1)",
+    "status": "published",
+    "nodes": 11,
+    "last_modified": "2026-05-19T05:58:34Z",
+    "description": "Device + behavioral signal screening for high-risk transactions"
+  },
+  {
+    "id": "wf_029",
+    "name": "Property Buyer KYC (Standard)",
+    "status": "archived",
+    "nodes": 14,
+    "last_modified": "2025-10-01T16:47:48Z",
+    "description": "Real estate buyer due diligence \u2014 identity + source-of-funds + sanctions"
+  },
+  {
+    "id": "wf_030",
+    "name": "Healthcare Vendor BGV v3",
+    "status": "published",
+    "nodes": 17,
+    "last_modified": "2025-09-30T21:30:12Z",
+    "description": "Healthcare ecosystem vendor verification \u2014 license + financials + compliance"
+  },
+  {
+    "id": "wf_031",
+    "name": "Programmatic KYC (Chennai)",
+    "status": "published",
+    "nodes": 8,
+    "last_modified": "2026-05-14T14:56:38Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_032",
+    "name": "Healthcare Vendor BGV v2",
+    "status": "archived",
+    "nodes": 16,
+    "last_modified": "2025-10-18T21:05:20Z",
+    "description": "Healthcare ecosystem vendor verification \u2014 license + financials + compliance"
+  },
+  {
+    "id": "wf_033",
+    "name": "Healthcare Vendor BGV (Mumbai)",
+    "status": "published",
+    "nodes": 17,
+    "last_modified": "2026-04-14T13:37:02Z",
+    "description": "Healthcare ecosystem vendor verification \u2014 license + financials + compliance"
+  },
+  {
+    "id": "wf_034",
+    "name": "Lending Underwriter Flow (Tier-1)",
+    "status": "published",
+    "nodes": 15,
+    "last_modified": "2026-03-24T08:28:10Z",
+    "description": "Lending underwriting \u2014 credit bureau + bank statement analysis + employment"
+  },
+  {
+    "id": "wf_035",
+    "name": "Lending Underwriter Flow (Standard)",
+    "status": "published",
+    "nodes": 18,
+    "last_modified": "2026-01-09T22:42:42Z",
+    "description": "Lending underwriting \u2014 credit bureau + bank statement analysis + employment"
+  },
+  {
+    "id": "wf_036",
+    "name": "Signup Fraud Detection (Web-only)",
+    "status": "published",
+    "nodes": 9,
+    "last_modified": "2025-09-16T12:34:28Z",
+    "description": "Device + IP + velocity checks for new user signup flows"
+  },
+  {
+    "id": "wf_037",
+    "name": "Healthcare Vendor BGV (Retail)",
+    "status": "archived",
+    "nodes": 12,
+    "last_modified": "2026-01-09T05:53:26Z",
+    "description": "Healthcare ecosystem vendor verification \u2014 license + financials + compliance"
+  },
+  {
+    "id": "wf_038",
+    "name": "Signup Fraud Detection (Delhi NCR)",
+    "status": "draft",
+    "nodes": 8,
+    "last_modified": "2026-01-06T09:00:58Z",
+    "description": "Device + IP + velocity checks for new user signup flows"
+  },
+  {
+    "id": "wf_039",
+    "name": "Lending Underwriter Flow (Chennai)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2026-04-22T19:29:21Z",
+    "description": "Lending underwriting \u2014 credit bureau + bank statement analysis + employment"
+  },
+  {
+    "id": "wf_040",
+    "name": "Programmatic KYC (Tier-2)",
+    "status": "archived",
+    "nodes": 9,
+    "last_modified": "2026-03-15T14:54:59Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_041",
+    "name": "Driver KYC (Beta)",
+    "status": "draft",
+    "nodes": 12,
+    "last_modified": "2026-02-22T04:00:56Z",
+    "description": "Mobility platform driver onboarding \u2014 DL + Aadhaar + criminal record check"
+  },
+  {
+    "id": "wf_042",
+    "name": "Vendor KYB (2026)",
+    "status": "published",
+    "nodes": 10,
+    "last_modified": "2025-10-31T05:15:11Z",
+    "description": "Vendor verification \u2014 entity + financials + sanctions screening"
+  },
+  {
+    "id": "wf_043",
+    "name": "Merchant KYB (Simple)",
+    "status": "draft",
+    "nodes": 16,
+    "last_modified": "2025-11-01T16:05:52Z",
+    "description": "Business verification for merchant onboarding \u2014 GST + MCA + UBO + bank account"
+  },
+  {
+    "id": "wf_044",
+    "name": "Driver KYC (Standard)",
+    "status": "archived",
+    "nodes": 9,
+    "last_modified": "2026-02-17T03:15:15Z",
+    "description": "Mobility platform driver onboarding \u2014 DL + Aadhaar + criminal record check"
+  },
+  {
+    "id": "wf_045",
+    "name": "Driver KYC (SMB)",
+    "status": "published",
+    "nodes": 9,
+    "last_modified": "2025-09-19T23:45:16Z",
+    "description": "Mobility platform driver onboarding \u2014 DL + Aadhaar + criminal record check"
+  },
+  {
+    "id": "wf_046",
+    "name": "Driver KYC v3",
+    "status": "published",
+    "nodes": 14,
+    "last_modified": "2025-10-28T09:58:16Z",
+    "description": "Mobility platform driver onboarding \u2014 DL + Aadhaar + criminal record check"
+  },
+  {
+    "id": "wf_047",
+    "name": "DigiLocker Fetch Flow (Q2)",
+    "status": "published",
+    "nodes": 6,
+    "last_modified": "2026-04-05T09:49:14Z",
+    "description": "DigiLocker document fetch and validation workflow"
+  },
+  {
+    "id": "wf_048",
+    "name": "Driver KYC (Mumbai)",
+    "status": "draft",
+    "nodes": 9,
+    "last_modified": "2025-12-25T12:31:16Z",
+    "description": "Mobility platform driver onboarding \u2014 DL + Aadhaar + criminal record check"
+  },
+  {
+    "id": "wf_049",
+    "name": "Programmatic KYC (Fast-Track)",
+    "status": "archived",
+    "nodes": 8,
+    "last_modified": "2025-09-15T12:25:44Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_050",
+    "name": "Forex Onboarding KYC (Mumbai)",
+    "status": "published",
+    "nodes": 12,
+    "last_modified": "2026-03-15T03:52:11Z",
+    "description": "Forex platform user KYC \u2014 geolocation + source-of-funds + adverse media"
+  },
+  {
+    "id": "wf_051",
+    "name": "Insurance Underwriter (Mumbai)",
+    "status": "published",
+    "nodes": 12,
+    "last_modified": "2025-10-21T23:25:25Z",
+    "description": "Insurance underwriting \u2014 medical declaration + identity + financial"
+  },
+  {
+    "id": "wf_052",
+    "name": "Vendor KYB (Delhi NCR)",
+    "status": "published",
+    "nodes": 13,
+    "last_modified": "2025-11-14T15:36:08Z",
+    "description": "Vendor verification \u2014 entity + financials + sanctions screening"
+  },
+  {
+    "id": "wf_053",
+    "name": "Driver KYC (SMB)",
+    "status": "draft",
+    "nodes": 12,
+    "last_modified": "2025-09-27T05:44:56Z",
+    "description": "Mobility platform driver onboarding \u2014 DL + Aadhaar + criminal record check"
+  },
+  {
+    "id": "wf_054",
+    "name": "Forex Onboarding KYC (Standard)",
+    "status": "archived",
+    "nodes": 12,
+    "last_modified": "2026-04-16T10:48:39Z",
+    "description": "Forex platform user KYC \u2014 geolocation + source-of-funds + adverse media"
+  },
+  {
+    "id": "wf_055",
+    "name": "DigiLocker Fetch Flow (Fast-Track)",
+    "status": "published",
+    "nodes": 8,
+    "last_modified": "2025-10-28T06:49:21Z",
+    "description": "DigiLocker document fetch and validation workflow"
+  },
+  {
+    "id": "wf_056",
+    "name": "Programmatic KYC (Enterprise)",
+    "status": "published",
+    "nodes": 6,
+    "last_modified": "2025-09-01T13:51:48Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_057",
+    "name": "Programmatic KYC v2",
+    "status": "published",
+    "nodes": 8,
+    "last_modified": "2025-12-23T08:47:02Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_058",
+    "name": "Crypto Exchange KYC (Q3)",
+    "status": "published",
+    "nodes": 14,
+    "last_modified": "2025-11-19T12:25:29Z",
+    "description": "Crypto exchange user KYC \u2014 chain analysis + sanctions + behavioral risk"
+  },
+  {
+    "id": "wf_059",
+    "name": "India Retail Onboarding (Enterprise)",
+    "status": "published",
+    "nodes": 15,
+    "last_modified": "2025-09-16T07:41:13Z",
+    "description": "Aadhaar + PAN + Bank account verification for Indian retail customers"
+  },
+  {
+    "id": "wf_060",
+    "name": "Risk Signal Screening (Q2)",
+    "status": "published",
+    "nodes": 11,
+    "last_modified": "2025-10-13T04:36:26Z",
+    "description": "Device + behavioral signal screening for high-risk transactions"
+  },
+  {
+    "id": "wf_061",
+    "name": "Lending Underwriter Flow (Retail)",
+    "status": "published",
+    "nodes": 15,
+    "last_modified": "2026-02-07T11:15:56Z",
+    "description": "Lending underwriting \u2014 credit bureau + bank statement analysis + employment"
+  },
+  {
+    "id": "wf_062",
+    "name": "Forex Onboarding KYC v1",
+    "status": "published",
+    "nodes": 15,
+    "last_modified": "2026-05-11T08:20:46Z",
+    "description": "Forex platform user KYC \u2014 geolocation + source-of-funds + adverse media"
+  },
+  {
+    "id": "wf_063",
+    "name": "Risk Signal Screening v1",
+    "status": "draft",
+    "nodes": 11,
+    "last_modified": "2025-09-11T15:37:06Z",
+    "description": "Device + behavioral signal screening for high-risk transactions"
+  },
+  {
+    "id": "wf_064",
+    "name": "Signup Fraud Detection (Fast-Track)",
+    "status": "draft",
+    "nodes": 12,
+    "last_modified": "2026-01-30T11:32:22Z",
+    "description": "Device + IP + velocity checks for new user signup flows"
+  },
+  {
+    "id": "wf_065",
+    "name": "Merchant KYB v2",
+    "status": "draft",
+    "nodes": 13,
+    "last_modified": "2026-03-11T22:32:44Z",
+    "description": "Business verification for merchant onboarding \u2014 GST + MCA + UBO + bank account"
+  },
+  {
+    "id": "wf_066",
+    "name": "Driver KYC v2",
+    "status": "published",
+    "nodes": 12,
+    "last_modified": "2026-02-28T00:18:41Z",
+    "description": "Mobility platform driver onboarding \u2014 DL + Aadhaar + criminal record check"
+  },
+  {
+    "id": "wf_067",
+    "name": "Employee BGV (Q1)",
+    "status": "archived",
+    "nodes": 16,
+    "last_modified": "2026-05-09T18:38:34Z",
+    "description": "Background verification for hiring \u2014 education, employment, criminal, address"
+  },
+  {
+    "id": "wf_068",
+    "name": "India Retail Onboarding (Q1)",
+    "status": "draft",
+    "nodes": 14,
+    "last_modified": "2026-05-25T22:53:32Z",
+    "description": "Aadhaar + PAN + Bank account verification for Indian retail customers"
+  },
+  {
+    "id": "wf_069",
+    "name": "Signup Fraud Detection (Tier-2)",
+    "status": "published",
+    "nodes": 11,
+    "last_modified": "2025-10-06T11:57:38Z",
+    "description": "Device + IP + velocity checks for new user signup flows"
+  },
+  {
+    "id": "wf_070",
+    "name": "Merchant KYB (SMB)",
+    "status": "published",
+    "nodes": 13,
+    "last_modified": "2025-11-16T09:02:20Z",
+    "description": "Business verification for merchant onboarding \u2014 GST + MCA + UBO + bank account"
+  },
+  {
+    "id": "wf_071",
+    "name": "Vendor KYB (Beta)",
+    "status": "draft",
+    "nodes": 14,
+    "last_modified": "2026-01-20T18:08:47Z",
+    "description": "Vendor verification \u2014 entity + financials + sanctions screening"
+  },
+  {
+    "id": "wf_072",
+    "name": "Forex Onboarding KYC (Beta)",
+    "status": "published",
+    "nodes": 17,
+    "last_modified": "2026-05-10T15:11:52Z",
+    "description": "Forex platform user KYC \u2014 geolocation + source-of-funds + adverse media"
+  },
+  {
+    "id": "wf_073",
+    "name": "DigiLocker Fetch Flow v2",
+    "status": "published",
+    "nodes": 5,
+    "last_modified": "2026-03-18T23:13:26Z",
+    "description": "DigiLocker document fetch and validation workflow"
+  },
+  {
+    "id": "wf_074",
+    "name": "DigiLocker Fetch Flow v3",
+    "status": "draft",
+    "nodes": 7,
+    "last_modified": "2025-10-27T10:46:11Z",
+    "description": "DigiLocker document fetch and validation workflow"
+  },
+  {
+    "id": "wf_075",
+    "name": "Merchant KYB (Tier-2)",
+    "status": "draft",
+    "nodes": 17,
+    "last_modified": "2026-04-17T13:56:06Z",
+    "description": "Business verification for merchant onboarding \u2014 GST + MCA + UBO + bank account"
+  },
+  {
+    "id": "wf_076",
+    "name": "Lending Underwriter Flow (Q3)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2025-09-25T17:39:49Z",
+    "description": "Lending underwriting \u2014 credit bureau + bank statement analysis + employment"
+  },
+  {
+    "id": "wf_077",
+    "name": "Programmatic KYC v3",
+    "status": "published",
+    "nodes": 5,
+    "last_modified": "2025-11-29T09:26:08Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_078",
+    "name": "DigiLocker Fetch Flow v2",
+    "status": "archived",
+    "nodes": 6,
+    "last_modified": "2025-12-28T09:53:09Z",
+    "description": "DigiLocker document fetch and validation workflow"
+  },
+  {
+    "id": "wf_079",
+    "name": "Crypto Exchange KYC (2025)",
+    "status": "published",
+    "nodes": 17,
+    "last_modified": "2025-09-30T23:34:22Z",
+    "description": "Crypto exchange user KYC \u2014 chain analysis + sanctions + behavioral risk"
+  },
+  {
+    "id": "wf_080",
+    "name": "Healthcare Vendor BGV (Hyderabad)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2026-04-12T16:06:54Z",
+    "description": "Healthcare ecosystem vendor verification \u2014 license + financials + compliance"
+  },
+  {
+    "id": "wf_081",
+    "name": "Risk Signal Screening (Hyderabad)",
+    "status": "published",
+    "nodes": 10,
+    "last_modified": "2025-09-12T05:02:35Z",
+    "description": "Device + behavioral signal screening for high-risk transactions"
+  },
+  {
+    "id": "wf_082",
+    "name": "Merchant KYB (Enhanced)",
+    "status": "published",
+    "nodes": 14,
+    "last_modified": "2026-03-02T19:03:10Z",
+    "description": "Business verification for merchant onboarding \u2014 GST + MCA + UBO + bank account"
+  },
+  {
+    "id": "wf_083",
+    "name": "Forex Onboarding KYC (Mumbai)",
+    "status": "archived",
+    "nodes": 14,
+    "last_modified": "2026-01-29T01:10:14Z",
+    "description": "Forex platform user KYC \u2014 geolocation + source-of-funds + adverse media"
+  },
+  {
+    "id": "wf_084",
+    "name": "Property Buyer KYC (Fast-Track)",
+    "status": "archived",
+    "nodes": 13,
+    "last_modified": "2025-10-12T10:05:13Z",
+    "description": "Real estate buyer due diligence \u2014 identity + source-of-funds + sanctions"
+  },
+  {
+    "id": "wf_085",
+    "name": "Healthcare Vendor BGV v1",
+    "status": "published",
+    "nodes": 13,
+    "last_modified": "2026-04-25T05:16:08Z",
+    "description": "Healthcare ecosystem vendor verification \u2014 license + financials + compliance"
+  },
+  {
+    "id": "wf_086",
+    "name": "India Retail Onboarding (Pune)",
+    "status": "published",
+    "nodes": 15,
+    "last_modified": "2026-03-29T16:18:35Z",
+    "description": "Aadhaar + PAN + Bank account verification for Indian retail customers"
+  },
+  {
+    "id": "wf_087",
+    "name": "Programmatic KYC v1",
+    "status": "published",
+    "nodes": 7,
+    "last_modified": "2026-03-31T00:23:34Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_088",
+    "name": "Signup Fraud Detection (Express)",
+    "status": "published",
+    "nodes": 7,
+    "last_modified": "2025-10-30T14:41:37Z",
+    "description": "Device + IP + velocity checks for new user signup flows"
+  },
+  {
+    "id": "wf_089",
+    "name": "Property Buyer KYC (Q1)",
+    "status": "published",
+    "nodes": 11,
+    "last_modified": "2026-04-08T21:41:24Z",
+    "description": "Real estate buyer due diligence \u2014 identity + source-of-funds + sanctions"
+  },
+  {
+    "id": "wf_090",
+    "name": "Property Buyer KYC (Tier-3)",
+    "status": "published",
+    "nodes": 10,
+    "last_modified": "2026-02-24T21:20:00Z",
+    "description": "Real estate buyer due diligence \u2014 identity + source-of-funds + sanctions"
+  },
+  {
+    "id": "wf_091",
+    "name": "Programmatic KYC (GA)",
+    "status": "published",
+    "nodes": 7,
+    "last_modified": "2026-05-18T03:01:50Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_092",
+    "name": "Employee BGV (Mobile-only)",
+    "status": "published",
+    "nodes": 19,
+    "last_modified": "2025-12-17T02:43:52Z",
+    "description": "Background verification for hiring \u2014 education, employment, criminal, address"
+  },
+  {
+    "id": "wf_093",
+    "name": "Property Buyer KYC (GA)",
+    "status": "published",
+    "nodes": 9,
+    "last_modified": "2026-04-24T01:06:39Z",
+    "description": "Real estate buyer due diligence \u2014 identity + source-of-funds + sanctions"
+  },
+  {
+    "id": "wf_094",
+    "name": "Employee BGV (Pune)",
+    "status": "published",
+    "nodes": 18,
+    "last_modified": "2025-09-11T06:04:13Z",
+    "description": "Background verification for hiring \u2014 education, employment, criminal, address"
+  },
+  {
+    "id": "wf_095",
+    "name": "Risk Signal Screening (2025)",
+    "status": "archived",
+    "nodes": 9,
+    "last_modified": "2026-03-30T18:18:21Z",
+    "description": "Device + behavioral signal screening for high-risk transactions"
+  },
+  {
+    "id": "wf_096",
+    "name": "Programmatic KYC (Q4)",
+    "status": "published",
+    "nodes": 5,
+    "last_modified": "2026-04-30T01:36:51Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_097",
+    "name": "Driver KYC v2",
+    "status": "archived",
+    "nodes": 9,
+    "last_modified": "2025-12-26T20:43:18Z",
+    "description": "Mobility platform driver onboarding \u2014 DL + Aadhaar + criminal record check"
+  },
+  {
+    "id": "wf_098",
+    "name": "Lending Underwriter Flow (Tier-1)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2025-09-19T18:04:17Z",
+    "description": "Lending underwriting \u2014 credit bureau + bank statement analysis + employment"
+  },
+  {
+    "id": "wf_099",
+    "name": "Forex Onboarding KYC (GA)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2026-02-25T18:54:29Z",
+    "description": "Forex platform user KYC \u2014 geolocation + source-of-funds + adverse media"
+  },
+  {
+    "id": "wf_100",
+    "name": "Signup Fraud Detection (Beta)",
+    "status": "published",
+    "nodes": 11,
+    "last_modified": "2026-02-26T17:27:18Z",
+    "description": "Device + IP + velocity checks for new user signup flows"
+  },
+  {
+    "id": "wf_101",
+    "name": "Merchant KYB (Deep Diligence)",
+    "status": "published",
+    "nodes": 17,
+    "last_modified": "2026-01-27T13:58:51Z",
+    "description": "Business verification for merchant onboarding \u2014 GST + MCA + UBO + bank account"
+  },
+  {
+    "id": "wf_102",
+    "name": "Driver KYC (Fast-Track)",
+    "status": "published",
+    "nodes": 14,
+    "last_modified": "2026-03-01T12:30:32Z",
+    "description": "Mobility platform driver onboarding \u2014 DL + Aadhaar + criminal record check"
+  },
+  {
+    "id": "wf_103",
+    "name": "Healthcare Vendor BGV (Pune)",
+    "status": "draft",
+    "nodes": 16,
+    "last_modified": "2025-11-20T15:42:34Z",
+    "description": "Healthcare ecosystem vendor verification \u2014 license + financials + compliance"
+  },
+  {
+    "id": "wf_104",
+    "name": "Lending Underwriter Flow (Standard)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2025-10-27T07:53:42Z",
+    "description": "Lending underwriting \u2014 credit bureau + bank statement analysis + employment"
+  },
+  {
+    "id": "wf_105",
+    "name": "Insurance Underwriter (Pilot)",
+    "status": "published",
+    "nodes": 14,
+    "last_modified": "2025-12-28T11:58:18Z",
+    "description": "Insurance underwriting \u2014 medical declaration + identity + financial"
+  },
+  {
+    "id": "wf_106",
+    "name": "Driver KYC (Q4)",
+    "status": "archived",
+    "nodes": 12,
+    "last_modified": "2025-10-16T11:27:18Z",
+    "description": "Mobility platform driver onboarding \u2014 DL + Aadhaar + criminal record check"
+  },
+  {
+    "id": "wf_107",
+    "name": "Signup Fraud Detection v4",
+    "status": "draft",
+    "nodes": 11,
+    "last_modified": "2026-02-17T15:04:32Z",
+    "description": "Device + IP + velocity checks for new user signup flows"
+  },
+  {
+    "id": "wf_108",
+    "name": "Merchant KYB (Retail)",
+    "status": "archived",
+    "nodes": 18,
+    "last_modified": "2025-11-02T22:40:29Z",
+    "description": "Business verification for merchant onboarding \u2014 GST + MCA + UBO + bank account"
+  },
+  {
+    "id": "wf_109",
+    "name": "Employee BGV (Tier-3)",
+    "status": "published",
+    "nodes": 20,
+    "last_modified": "2025-10-10T11:46:50Z",
+    "description": "Background verification for hiring \u2014 education, employment, criminal, address"
+  },
+  {
+    "id": "wf_110",
+    "name": "India Retail Onboarding v1",
+    "status": "draft",
+    "nodes": 13,
+    "last_modified": "2026-04-16T17:30:46Z",
+    "description": "Aadhaar + PAN + Bank account verification for Indian retail customers"
+  },
+  {
+    "id": "wf_111",
+    "name": "Signup Fraud Detection (Q1)",
+    "status": "draft",
+    "nodes": 10,
+    "last_modified": "2026-02-02T06:42:54Z",
+    "description": "Device + IP + velocity checks for new user signup flows"
+  },
+  {
+    "id": "wf_112",
+    "name": "Crypto Exchange KYC (Express)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2025-11-05T09:18:28Z",
+    "description": "Crypto exchange user KYC \u2014 chain analysis + sanctions + behavioral risk"
+  },
+  {
+    "id": "wf_113",
+    "name": "Forex Onboarding KYC (Standard)",
+    "status": "archived",
+    "nodes": 12,
+    "last_modified": "2025-12-23T22:32:25Z",
+    "description": "Forex platform user KYC \u2014 geolocation + source-of-funds + adverse media"
+  },
+  {
+    "id": "wf_114",
+    "name": "DigiLocker Fetch Flow (Q1)",
+    "status": "draft",
+    "nodes": 5,
+    "last_modified": "2025-11-06T18:50:36Z",
+    "description": "DigiLocker document fetch and validation workflow"
+  },
+  {
+    "id": "wf_115",
+    "name": "Property Buyer KYC (Bangalore)",
+    "status": "published",
+    "nodes": 12,
+    "last_modified": "2026-04-03T18:42:41Z",
+    "description": "Real estate buyer due diligence \u2014 identity + source-of-funds + sanctions"
+  },
+  {
+    "id": "wf_116",
+    "name": "Forex Onboarding KYC (Pilot)",
+    "status": "draft",
+    "nodes": 15,
+    "last_modified": "2026-04-07T10:07:18Z",
+    "description": "Forex platform user KYC \u2014 geolocation + source-of-funds + adverse media"
+  },
+  {
+    "id": "wf_117",
+    "name": "Healthcare Vendor BGV (Q4)",
+    "status": "draft",
+    "nodes": 15,
+    "last_modified": "2025-12-29T12:06:58Z",
+    "description": "Healthcare ecosystem vendor verification \u2014 license + financials + compliance"
+  },
+  {
+    "id": "wf_118",
+    "name": "DigiLocker Fetch Flow (Q2)",
+    "status": "published",
+    "nodes": 8,
+    "last_modified": "2026-03-21T11:25:41Z",
+    "description": "DigiLocker document fetch and validation workflow"
+  },
+  {
+    "id": "wf_119",
+    "name": "Property Buyer KYC v3",
+    "status": "published",
+    "nodes": 13,
+    "last_modified": "2026-02-15T23:14:45Z",
+    "description": "Real estate buyer due diligence \u2014 identity + source-of-funds + sanctions"
+  },
+  {
+    "id": "wf_120",
+    "name": "Employee BGV (2026)",
+    "status": "archived",
+    "nodes": 14,
+    "last_modified": "2025-11-16T13:48:12Z",
+    "description": "Background verification for hiring \u2014 education, employment, criminal, address"
+  },
+  {
+    "id": "wf_121",
+    "name": "Employee BGV (GA)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2025-09-22T14:16:31Z",
+    "description": "Background verification for hiring \u2014 education, employment, criminal, address"
+  },
+  {
+    "id": "wf_122",
+    "name": "DigiLocker Fetch Flow (Tier-3)",
+    "status": "draft",
+    "nodes": 8,
+    "last_modified": "2025-10-11T22:50:36Z",
+    "description": "DigiLocker document fetch and validation workflow"
+  },
+  {
+    "id": "wf_123",
+    "name": "Driver KYC (SMB)",
+    "status": "published",
+    "nodes": 12,
+    "last_modified": "2025-11-28T16:13:44Z",
+    "description": "Mobility platform driver onboarding \u2014 DL + Aadhaar + criminal record check"
+  },
+  {
+    "id": "wf_124",
+    "name": "Vendor KYB (Fast-Track)",
+    "status": "published",
+    "nodes": 10,
+    "last_modified": "2026-04-12T05:09:21Z",
+    "description": "Vendor verification \u2014 entity + financials + sanctions screening"
+  },
+  {
+    "id": "wf_125",
+    "name": "Programmatic KYC (Simple)",
+    "status": "published",
+    "nodes": 9,
+    "last_modified": "2026-01-06T19:56:01Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_126",
+    "name": "Merchant KYB (Beta)",
+    "status": "published",
+    "nodes": 18,
+    "last_modified": "2026-04-17T17:22:37Z",
+    "description": "Business verification for merchant onboarding \u2014 GST + MCA + UBO + bank account"
+  },
+  {
+    "id": "wf_127",
+    "name": "Property Buyer KYC (Fast-Track)",
+    "status": "archived",
+    "nodes": 13,
+    "last_modified": "2026-03-16T21:09:58Z",
+    "description": "Real estate buyer due diligence \u2014 identity + source-of-funds + sanctions"
+  },
+  {
+    "id": "wf_128",
+    "name": "Insurance Underwriter (Tier-3)",
+    "status": "published",
+    "nodes": 14,
+    "last_modified": "2025-11-13T03:31:11Z",
+    "description": "Insurance underwriting \u2014 medical declaration + identity + financial"
+  },
+  {
+    "id": "wf_129",
+    "name": "Vendor KYB (Simple)",
+    "status": "published",
+    "nodes": 13,
+    "last_modified": "2026-02-27T06:11:42Z",
+    "description": "Vendor verification \u2014 entity + financials + sanctions screening"
+  },
+  {
+    "id": "wf_130",
+    "name": "Insurance Underwriter (Deep Diligence)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2026-04-14T06:07:56Z",
+    "description": "Insurance underwriting \u2014 medical declaration + identity + financial"
+  },
+  {
+    "id": "wf_131",
+    "name": "Healthcare Vendor BGV (Delhi NCR)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2025-09-08T05:26:53Z",
+    "description": "Healthcare ecosystem vendor verification \u2014 license + financials + compliance"
+  },
+  {
+    "id": "wf_132",
+    "name": "Programmatic KYC (Simple)",
+    "status": "draft",
+    "nodes": 5,
+    "last_modified": "2025-12-24T20:50:14Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_133",
+    "name": "Property Buyer KYC (Q1)",
+    "status": "published",
+    "nodes": 10,
+    "last_modified": "2025-11-09T17:19:31Z",
+    "description": "Real estate buyer due diligence \u2014 identity + source-of-funds + sanctions"
+  },
+  {
+    "id": "wf_134",
+    "name": "Merchant KYB (Tier-2)",
+    "status": "published",
+    "nodes": 15,
+    "last_modified": "2025-11-30T10:48:12Z",
+    "description": "Business verification for merchant onboarding \u2014 GST + MCA + UBO + bank account"
+  },
+  {
+    "id": "wf_135",
+    "name": "Healthcare Vendor BGV (Express)",
+    "status": "archived",
+    "nodes": 14,
+    "last_modified": "2026-05-13T22:08:41Z",
+    "description": "Healthcare ecosystem vendor verification \u2014 license + financials + compliance"
+  },
+  {
+    "id": "wf_136",
+    "name": "Programmatic KYC v2",
+    "status": "published",
+    "nodes": 5,
+    "last_modified": "2025-09-06T04:40:23Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_137",
+    "name": "Lending Underwriter Flow (Enterprise)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2026-02-22T05:43:36Z",
+    "description": "Lending underwriting \u2014 credit bureau + bank statement analysis + employment"
+  },
+  {
+    "id": "wf_138",
+    "name": "Insurance Underwriter (Enhanced)",
+    "status": "published",
+    "nodes": 11,
+    "last_modified": "2025-10-24T10:17:16Z",
+    "description": "Insurance underwriting \u2014 medical declaration + identity + financial"
+  },
+  {
+    "id": "wf_139",
+    "name": "India Retail Onboarding (Hyderabad)",
+    "status": "published",
+    "nodes": 11,
+    "last_modified": "2026-01-05T21:56:41Z",
+    "description": "Aadhaar + PAN + Bank account verification for Indian retail customers"
+  },
+  {
+    "id": "wf_140",
+    "name": "Signup Fraud Detection (Tier-2)",
+    "status": "draft",
+    "nodes": 10,
+    "last_modified": "2025-11-08T16:09:34Z",
+    "description": "Device + IP + velocity checks for new user signup flows"
+  },
+  {
+    "id": "wf_141",
+    "name": "Merchant KYB (Chennai)",
+    "status": "draft",
+    "nodes": 16,
+    "last_modified": "2026-05-17T06:44:30Z",
+    "description": "Business verification for merchant onboarding \u2014 GST + MCA + UBO + bank account"
+  },
+  {
+    "id": "wf_142",
+    "name": "Crypto Exchange KYC (Bangalore)",
+    "status": "published",
+    "nodes": 14,
+    "last_modified": "2025-09-29T23:17:28Z",
+    "description": "Crypto exchange user KYC \u2014 chain analysis + sanctions + behavioral risk"
+  },
+  {
+    "id": "wf_143",
+    "name": "India Retail Onboarding (Beta)",
+    "status": "draft",
+    "nodes": 14,
+    "last_modified": "2026-05-02T08:25:27Z",
+    "description": "Aadhaar + PAN + Bank account verification for Indian retail customers"
+  },
+  {
+    "id": "wf_144",
+    "name": "Programmatic KYC (Deep Diligence)",
+    "status": "published",
+    "nodes": 10,
+    "last_modified": "2025-09-21T08:48:33Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_145",
+    "name": "Crypto Exchange KYC v1",
+    "status": "draft",
+    "nodes": 13,
+    "last_modified": "2026-03-27T00:35:49Z",
+    "description": "Crypto exchange user KYC \u2014 chain analysis + sanctions + behavioral risk"
+  },
+  {
+    "id": "wf_146",
+    "name": "Property Buyer KYC (Bangalore)",
+    "status": "published",
+    "nodes": 13,
+    "last_modified": "2025-12-03T01:12:52Z",
+    "description": "Real estate buyer due diligence \u2014 identity + source-of-funds + sanctions"
+  },
+  {
+    "id": "wf_147",
+    "name": "Programmatic KYC (Web-only)",
+    "status": "published",
+    "nodes": 5,
+    "last_modified": "2026-02-21T12:59:53Z",
+    "description": "Headless KYC invokable entirely via API \u2014 no UI handoff required"
+  },
+  {
+    "id": "wf_148",
+    "name": "India Retail Onboarding (Fast-Track)",
+    "status": "published",
+    "nodes": 16,
+    "last_modified": "2025-09-29T06:49:33Z",
+    "description": "Aadhaar + PAN + Bank account verification for Indian retail customers"
+  },
+  {
+    "id": "wf_149",
+    "name": "Merchant KYB (Q1)",
+    "status": "published",
+    "nodes": 17,
+    "last_modified": "2025-12-26T17:03:11Z",
+    "description": "Business verification for merchant onboarding \u2014 GST + MCA + UBO + bank account"
+  },
+  {
+    "id": "wf_150",
+    "name": "Crypto Exchange KYC v3",
+    "status": "published",
+    "nodes": 17,
+    "last_modified": "2026-03-27T14:29:37Z",
+    "description": "Crypto exchange user KYC \u2014 chain analysis + sanctions + behavioral risk"
+  }
+]

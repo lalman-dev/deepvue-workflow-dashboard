@@ -1,0 +1,1584 @@
+[
+  {
+    "id": "run_001",
+    "workflow_id": "wf_001",
+    "workflow_name": "India Retail Onboarding (Simple)",
+    "status": "running",
+    "started_at": "2026-05-28T19:25:00Z",
+    "duration_ms": null,
+    "progress": 70,
+    "subject_id": "user_8XKJ32A1",
+    "error": null,
+    "workflow_version": "v1",
+    "trigger_input": {
+      "subject_id": "user_8XKJ32A1",
+      "pan": "ABCDE1234F",
+      "phone": "+91-99000-12345"
+    },
+    "steps": [
+      {
+        "id": "n_aadhaar_otp",
+        "node_id": "n_aadhaar_otp",
+        "node_type": "aadhaar-otp-init",
+        "status": "succeeded",
+        "started_at": "2026-05-28T19:25:00Z",
+        "duration_ms": 1817,
+        "output": {
+          "reference_id": "ref_x9k3p2"
+        },
+        "error": null
+      },
+      {
+        "id": "n_aadhaar_verify",
+        "node_id": "n_aadhaar_verify",
+        "node_type": "aadhaar-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-28T19:25:01Z",
+        "duration_ms": 2866,
+        "output": {
+          "name_match": true,
+          "dob_match": true,
+          "address_match": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_pan_basic",
+        "node_id": "n_pan_basic",
+        "node_type": "pan-basic",
+        "status": "pending",
+        "started_at": "2026-05-28T19:25:04Z",
+        "duration_ms": null,
+        "output": null,
+        "error": null
+      },
+      {
+        "id": "n_pan_aadhaar_link",
+        "node_id": "n_pan_aadhaar_link",
+        "node_type": "pan-aadhaar-linkage",
+        "status": "not_started",
+        "started_at": null,
+        "duration_ms": null,
+        "output": null,
+        "error": null
+      },
+      {
+        "id": "n_bank_verify",
+        "node_id": "n_bank_verify",
+        "node_type": "bank-account-verify",
+        "status": "not_started",
+        "started_at": null,
+        "duration_ms": null,
+        "output": null,
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "not_started",
+        "started_at": null,
+        "duration_ms": null,
+        "output": null,
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_002",
+    "workflow_id": "wf_011",
+    "workflow_name": "Forex Exchange Enhanced KYC \u2014 Tier-2 / Tier-3 City Variant with Geolocation, Source-of-Funds, and Adverse Media Scan",
+    "status": "running",
+    "started_at": "2026-05-28T18:55:00Z",
+    "duration_ms": null,
+    "progress": 45,
+    "subject_id": "user_T2X9KL3M",
+    "error": null,
+    "workflow_version": "v1",
+    "trigger_input": {
+      "subject_id": "user_T2X9KL3M",
+      "pan": "ABCDE1234F",
+      "phone": "+91-99000-12345"
+    },
+    "steps": [
+      {
+        "id": "n_geo",
+        "node_id": "n_geo",
+        "node_type": "geolocation",
+        "status": "succeeded",
+        "started_at": "2026-05-28T18:55:00Z",
+        "duration_ms": 585,
+        "output": {
+          "ip_country": "IN",
+          "claimed_country": "IN",
+          "is_consistent": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_identity",
+        "node_id": "n_identity",
+        "node_type": "identity-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-28T18:55:00Z",
+        "duration_ms": 1697,
+        "output": {
+          "verified": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_source_funds",
+        "node_id": "n_source_funds",
+        "node_type": "source-of-funds",
+        "status": "succeeded",
+        "started_at": "2026-05-28T18:55:02Z",
+        "duration_ms": 2587,
+        "output": {
+          "declared": "salary",
+          "consistency_check": "pass"
+        },
+        "error": null
+      },
+      {
+        "id": "n_adverse_media",
+        "node_id": "n_adverse_media",
+        "node_type": "adverse-media-scan",
+        "status": "pending",
+        "started_at": "2026-05-28T18:55:04Z",
+        "duration_ms": null,
+        "output": null,
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "not_started",
+        "started_at": null,
+        "duration_ms": null,
+        "output": null,
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_003",
+    "workflow_id": "wf_009",
+    "workflow_name": "Lending Underwriter Flow",
+    "status": "running",
+    "started_at": "2026-05-28T19:28:00Z",
+    "duration_ms": null,
+    "progress": 15,
+    "subject_id": "user_LN44782",
+    "error": null,
+    "workflow_version": "v1",
+    "trigger_input": {
+      "subject_id": "user_LN44782",
+      "loan_amount_requested": 250000,
+      "tenure_months": 24
+    },
+    "steps": [
+      {
+        "id": "n_credit_bureau",
+        "node_id": "n_credit_bureau",
+        "node_type": "credit-bureau-pull",
+        "status": "succeeded",
+        "started_at": "2026-05-28T19:28:00Z",
+        "duration_ms": 353,
+        "output": {
+          "score": 742,
+          "report_summary": "No defaults",
+          "credit_age_months": 84
+        },
+        "error": null
+      },
+      {
+        "id": "n_bank_statement",
+        "node_id": "n_bank_statement",
+        "node_type": "bank-statement-analysis",
+        "status": "pending",
+        "started_at": "2026-05-28T19:28:00Z",
+        "duration_ms": null,
+        "output": null,
+        "error": null
+      },
+      {
+        "id": "n_employment",
+        "node_id": "n_employment",
+        "node_type": "employment-history",
+        "status": "not_started",
+        "started_at": null,
+        "duration_ms": null,
+        "output": null,
+        "error": null
+      },
+      {
+        "id": "n_fraud_signal",
+        "node_id": "n_fraud_signal",
+        "node_type": "fraud-signal",
+        "status": "not_started",
+        "started_at": null,
+        "duration_ms": null,
+        "output": null,
+        "error": null
+      },
+      {
+        "id": "n_score",
+        "node_id": "n_score",
+        "node_type": "underwriter-score",
+        "status": "not_started",
+        "started_at": null,
+        "duration_ms": null,
+        "output": null,
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_004",
+    "workflow_id": "wf_004",
+    "workflow_name": "Driver KYC (Standard)",
+    "status": "waiting",
+    "started_at": "2026-05-28T19:29:00Z",
+    "duration_ms": null,
+    "progress": null,
+    "subject_id": "user_DR91237Q",
+    "error": null,
+    "workflow_version": "v5",
+    "trigger_input": {
+      "subject_id": "user_DR91237Q",
+      "pan": "ABCDE1234F",
+      "phone": "+91-99000-12345"
+    },
+    "steps": [],
+    "warning": null
+  },
+  {
+    "id": "run_005",
+    "workflow_id": "wf_008",
+    "workflow_name": "Vendor KYB (Standard)",
+    "status": "waiting",
+    "started_at": "2026-05-28T19:22:00Z",
+    "duration_ms": null,
+    "progress": null,
+    "subject_id": "biz_VND00541",
+    "error": null,
+    "workflow_version": "v2",
+    "trigger_input": {
+      "subject_id": "biz_VND00541",
+      "entity_pan": "AABCT1234A",
+      "gstin": "29AABCT1234A1Z5"
+    },
+    "steps": [],
+    "warning": null
+  },
+  {
+    "id": "run_006",
+    "workflow_id": "wf_001",
+    "workflow_name": "India Retail Onboarding (Simple)",
+    "status": "completed",
+    "started_at": "2026-05-28T18:30:00Z",
+    "duration_ms": 4250,
+    "progress": null,
+    "subject_id": "user_8VK19PR2",
+    "error": null,
+    "workflow_version": "v2",
+    "trigger_input": {
+      "subject_id": "user_8VK19PR2",
+      "pan": "ABCDE1234F",
+      "phone": "+91-99000-12345"
+    },
+    "steps": [
+      {
+        "id": "n_aadhaar_otp",
+        "node_id": "n_aadhaar_otp",
+        "node_type": "aadhaar-otp-init",
+        "status": "succeeded",
+        "started_at": "2026-05-28T18:30:00Z",
+        "duration_ms": 446,
+        "output": {
+          "reference_id": "ref_x9k3p2"
+        },
+        "error": null
+      },
+      {
+        "id": "n_aadhaar_verify",
+        "node_id": "n_aadhaar_verify",
+        "node_type": "aadhaar-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-28T18:30:00Z",
+        "duration_ms": 918,
+        "output": {
+          "name_match": true,
+          "dob_match": true,
+          "address_match": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_pan_basic",
+        "node_id": "n_pan_basic",
+        "node_type": "pan-basic",
+        "status": "succeeded",
+        "started_at": "2026-05-28T18:30:01Z",
+        "duration_ms": 788,
+        "output": {
+          "pan": "ABCDE1234F",
+          "name": "Verified",
+          "status": "VALID"
+        },
+        "error": null
+      },
+      {
+        "id": "n_pan_aadhaar_link",
+        "node_id": "n_pan_aadhaar_link",
+        "node_type": "pan-aadhaar-linkage",
+        "status": "succeeded",
+        "started_at": "2026-05-28T18:30:02Z",
+        "duration_ms": 414,
+        "output": {
+          "linked": true,
+          "confidence": 0.98
+        },
+        "error": null
+      },
+      {
+        "id": "n_bank_verify",
+        "node_id": "n_bank_verify",
+        "node_type": "bank-account-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-28T18:30:02Z",
+        "duration_ms": 933,
+        "output": {
+          "account_holder": "Verified",
+          "ifsc": "HDFC0001234",
+          "is_valid": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "succeeded",
+        "started_at": "2026-05-28T18:30:03Z",
+        "duration_ms": 480,
+        "output": {
+          "outcome": "APPROVED",
+          "risk_score": 12
+        },
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_007",
+    "workflow_id": "wf_002",
+    "workflow_name": "Signup Fraud Detection",
+    "status": "completed",
+    "started_at": "2026-05-28T16:30:00Z",
+    "duration_ms": 1800,
+    "progress": null,
+    "subject_id": "user_FRD7821X",
+    "error": null,
+    "workflow_version": "v1",
+    "trigger_input": {
+      "subject_id": "user_FRD7821X",
+      "pan": "ABCDE1234F",
+      "phone": "+91-99000-12345"
+    },
+    "steps": [
+      {
+        "id": "n_device_fp",
+        "node_id": "n_device_fp",
+        "node_type": "device-fingerprint",
+        "status": "succeeded",
+        "started_at": "2026-05-28T16:30:00Z",
+        "duration_ms": 478,
+        "output": {
+          "device_id": "dvc_82xkj1",
+          "is_emulator": false,
+          "is_rooted": false
+        },
+        "error": null
+      },
+      {
+        "id": "n_ip_check",
+        "node_id": "n_ip_check",
+        "node_type": "ip-enrichment",
+        "status": "succeeded",
+        "started_at": "2026-05-28T16:30:00Z",
+        "duration_ms": 211,
+        "output": {
+          "ip": "103.21.x.x",
+          "country": "IN",
+          "is_vpn": false,
+          "is_proxy": false
+        },
+        "error": null
+      },
+      {
+        "id": "n_velocity",
+        "node_id": "n_velocity",
+        "node_type": "velocity-check",
+        "status": "succeeded",
+        "started_at": "2026-05-28T16:30:00Z",
+        "duration_ms": 475,
+        "output": {
+          "signups_24h": 1,
+          "signups_7d": 1,
+          "flag": "OK"
+        },
+        "error": null
+      },
+      {
+        "id": "n_risk_score",
+        "node_id": "n_risk_score",
+        "node_type": "risk-score",
+        "status": "succeeded",
+        "started_at": "2026-05-28T16:30:01Z",
+        "duration_ms": 479,
+        "output": {
+          "score": 14,
+          "tier": "low"
+        },
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "succeeded",
+        "started_at": "2026-05-28T16:30:01Z",
+        "duration_ms": 383,
+        "output": {
+          "outcome": "ALLOW"
+        },
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_008",
+    "workflow_id": "wf_003",
+    "workflow_name": "DigiLocker Sample Flow",
+    "status": "completed",
+    "started_at": "2026-05-28T13:30:00Z",
+    "duration_ms": 850,
+    "progress": null,
+    "subject_id": "user_DL90021K",
+    "error": null,
+    "workflow_version": "v5",
+    "trigger_input": {
+      "subject_id": "user_DL90021K",
+      "pan": "ABCDE1234F",
+      "phone": "+91-99000-12345"
+    },
+    "steps": [
+      {
+        "id": "n_digilocker",
+        "node_id": "n_digilocker",
+        "node_type": "digilocker-pull",
+        "status": "succeeded",
+        "started_at": "2026-05-28T13:30:00Z",
+        "duration_ms": 117,
+        "output": {
+          "hosted_url": "https://production.deepvue.tech/v1/kyc/digilocker/...",
+          "signal_name": "digilocker-pull_callback"
+        },
+        "error": null
+      },
+      {
+        "id": "n_digilocker_token",
+        "node_id": "n_digilocker_token",
+        "node_type": "digilocker-access-token",
+        "status": "succeeded",
+        "started_at": "2026-05-28T13:30:00Z",
+        "duration_ms": 248,
+        "output": {
+          "dob": "19011994",
+          "name": "Verified User",
+          "gender": "M",
+          "expires_in": 3600
+        },
+        "error": null
+      },
+      {
+        "id": "n_digilocker_eaadhaar",
+        "node_id": "n_digilocker_eaadhaar",
+        "node_type": "digilocker-eaadhaar",
+        "status": "succeeded",
+        "started_at": "2026-05-28T13:30:00Z",
+        "duration_ms": 140,
+        "output": {
+          "dob": "19-01-1994",
+          "name": "Verified User",
+          "address_verified": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_notify",
+        "node_id": "n_notify",
+        "node_type": "webhook",
+        "status": "succeeded",
+        "started_at": "2026-05-28T13:30:00Z",
+        "duration_ms": 180,
+        "output": {
+          "endpoint": "https://customer.example.com/hooks/run-complete"
+        },
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_009",
+    "workflow_id": "wf_004",
+    "workflow_name": "Driver KYC (Standard)",
+    "status": "completed",
+    "started_at": "2026-05-27T19:30:00Z",
+    "duration_ms": 5200,
+    "progress": null,
+    "subject_id": "user_DR40012Z",
+    "error": null,
+    "workflow_version": "v2",
+    "trigger_input": {
+      "subject_id": "user_DR40012Z",
+      "pan": "ABCDE1234F",
+      "phone": "+91-99000-12345"
+    },
+    "steps": [
+      {
+        "id": "n_dl_verify",
+        "node_id": "n_dl_verify",
+        "node_type": "driving-license-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-27T19:30:00Z",
+        "duration_ms": 553,
+        "output": {
+          "dl_number": "DL-0420110012345",
+          "name_match": true,
+          "valid_till": "2032-04-20"
+        },
+        "error": null
+      },
+      {
+        "id": "n_aadhaar",
+        "node_id": "n_aadhaar",
+        "node_type": "aadhaar-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-27T19:30:00Z",
+        "duration_ms": 1017,
+        "output": {
+          "name_match": true,
+          "dob_match": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_court_check",
+        "node_id": "n_court_check",
+        "node_type": "court-records",
+        "status": "succeeded",
+        "started_at": "2026-05-27T19:30:01Z",
+        "duration_ms": 748,
+        "output": {
+          "matches": 0,
+          "is_clean": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_fir_check",
+        "node_id": "n_fir_check",
+        "node_type": "fir-lookup",
+        "status": "succeeded",
+        "started_at": "2026-05-27T19:30:02Z",
+        "duration_ms": 1006,
+        "output": {
+          "matches": 0,
+          "is_clean": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_risk_score",
+        "node_id": "n_risk_score",
+        "node_type": "risk-score",
+        "status": "succeeded",
+        "started_at": "2026-05-27T19:30:03Z",
+        "duration_ms": 1268,
+        "output": {
+          "score": 8,
+          "tier": "low"
+        },
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "succeeded",
+        "started_at": "2026-05-27T19:30:04Z",
+        "duration_ms": 1131,
+        "output": {
+          "outcome": "APPROVED"
+        },
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_010",
+    "workflow_id": "wf_005",
+    "workflow_name": "Employee BGV (Standard)",
+    "status": "completed",
+    "started_at": "2026-05-27T14:00:00Z",
+    "duration_ms": 12450,
+    "progress": null,
+    "subject_id": "emp_HR556712",
+    "error": null,
+    "workflow_version": "v1",
+    "trigger_input": {
+      "subject_id": "emp_HR556712",
+      "candidate_email": "candidate@example.com",
+      "role": "Software Engineer"
+    },
+    "steps": [
+      {
+        "id": "n_education_verify",
+        "node_id": "n_education_verify",
+        "node_type": "education-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-27T14:00:00Z",
+        "duration_ms": 2058,
+        "output": {
+          "degree": "B.Tech CSE",
+          "institute_verified": true,
+          "year": 2019
+        },
+        "error": null
+      },
+      {
+        "id": "n_employment_verify",
+        "node_id": "n_employment_verify",
+        "node_type": "employment-history",
+        "status": "succeeded",
+        "started_at": "2026-05-27T14:00:02Z",
+        "duration_ms": 2197,
+        "output": {
+          "verified_employers": 2,
+          "discrepancies": 0
+        },
+        "error": null
+      },
+      {
+        "id": "n_address_proof",
+        "node_id": "n_address_proof",
+        "node_type": "address-proof",
+        "status": "succeeded",
+        "started_at": "2026-05-27T14:00:04Z",
+        "duration_ms": 1273,
+        "output": {
+          "current_address_verified": true,
+          "permanent_address_verified": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_criminal_check",
+        "node_id": "n_criminal_check",
+        "node_type": "criminal-record",
+        "status": "succeeded",
+        "started_at": "2026-05-27T14:00:05Z",
+        "duration_ms": 1651,
+        "output": {
+          "matches": 0,
+          "is_clean": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_court_records",
+        "node_id": "n_court_records",
+        "node_type": "court-records",
+        "status": "succeeded",
+        "started_at": "2026-05-27T14:00:07Z",
+        "duration_ms": 1088,
+        "output": {
+          "matches": 0,
+          "is_clean": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_review",
+        "node_id": "n_review",
+        "node_type": "human-review",
+        "status": "succeeded",
+        "started_at": "2026-05-27T14:00:08Z",
+        "duration_ms": 2010,
+        "output": {
+          "reviewer": "ops_team",
+          "decision": "approved",
+          "notes": "All checks clean"
+        },
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "succeeded",
+        "started_at": "2026-05-27T14:00:10Z",
+        "duration_ms": 2347,
+        "output": {
+          "outcome": "APPROVED",
+          "risk_score": 6
+        },
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_011",
+    "workflow_id": "wf_006",
+    "workflow_name": "Merchant KYB (Standard)",
+    "status": "completed",
+    "started_at": "2026-05-26T19:30:00Z",
+    "duration_ms": 8900,
+    "progress": null,
+    "subject_id": null,
+    "error": null,
+    "workflow_version": "v3",
+    "trigger_input": {
+      "subject_id": "unknown",
+      "entity_pan": "AABCT1234A",
+      "gstin": "29AABCT1234A1Z5"
+    },
+    "steps": [
+      {
+        "id": "n_gst_verify",
+        "node_id": "n_gst_verify",
+        "node_type": "gst-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-26T19:30:00Z",
+        "duration_ms": 2008,
+        "output": {
+          "gstin": "29AABCT1234A1Z5",
+          "status": "Active",
+          "filing_status": "Regular"
+        },
+        "error": null
+      },
+      {
+        "id": "n_mca_lookup",
+        "node_id": "n_mca_lookup",
+        "node_type": "mca-lookup",
+        "status": "succeeded",
+        "started_at": "2026-05-26T19:30:02Z",
+        "duration_ms": 1162,
+        "output": {
+          "cin": "U72200KA2018PTC112233",
+          "directors": 2,
+          "status": "Active"
+        },
+        "error": null
+      },
+      {
+        "id": "n_ubo_check",
+        "node_id": "n_ubo_check",
+        "node_type": "ubo-resolution",
+        "status": "succeeded",
+        "started_at": "2026-05-26T19:30:03Z",
+        "duration_ms": 1757,
+        "output": {
+          "ubos_identified": 1,
+          "is_complete": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_bank_verify",
+        "node_id": "n_bank_verify",
+        "node_type": "bank-account-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-26T19:30:04Z",
+        "duration_ms": 2134,
+        "output": {
+          "is_valid": true,
+          "match_score": 0.97
+        },
+        "error": null
+      },
+      {
+        "id": "n_sanctions",
+        "node_id": "n_sanctions",
+        "node_type": "sanctions-screening",
+        "status": "succeeded",
+        "started_at": "2026-05-26T19:30:07Z",
+        "duration_ms": 1829,
+        "output": {
+          "matches": 0,
+          "is_clean": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "succeeded",
+        "started_at": "2026-05-26T19:30:08Z",
+        "duration_ms": 1616,
+        "output": {
+          "outcome": "APPROVED"
+        },
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_012",
+    "workflow_id": "wf_007",
+    "workflow_name": "Programmatic KYC (API-only)",
+    "status": "completed",
+    "started_at": "2026-05-25T19:30:00Z",
+    "duration_ms": 67,
+    "progress": null,
+    "subject_id": "user_PRG88812",
+    "error": null,
+    "workflow_version": "v2",
+    "trigger_input": {
+      "subject_id": "user_PRG88812",
+      "pan": "ABCDE1234F",
+      "phone": "+91-99000-12345"
+    },
+    "steps": [
+      {
+        "id": "n_identity",
+        "node_id": "n_identity",
+        "node_type": "identity-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-25T19:30:00Z",
+        "duration_ms": 54,
+        "output": {
+          "verified": true,
+          "match_score": 0.96
+        },
+        "error": null
+      },
+      {
+        "id": "n_address",
+        "node_id": "n_address",
+        "node_type": "address-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-25T19:30:00Z",
+        "duration_ms": 48,
+        "output": {
+          "verified": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "succeeded",
+        "started_at": "2026-05-25T19:30:00Z",
+        "duration_ms": 44,
+        "output": {
+          "outcome": "APPROVED"
+        },
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_013",
+    "workflow_id": "wf_008",
+    "workflow_name": "Vendor KYB (Standard)",
+    "status": "completed",
+    "started_at": "2026-05-24T19:30:00Z",
+    "duration_ms": 6100,
+    "progress": null,
+    "subject_id": "biz_VND00498",
+    "error": null,
+    "workflow_version": "v5",
+    "trigger_input": {
+      "subject_id": "biz_VND00498",
+      "entity_pan": "AABCT1234A",
+      "gstin": "29AABCT1234A1Z5"
+    },
+    "steps": [
+      {
+        "id": "n_entity_verify",
+        "node_id": "n_entity_verify",
+        "node_type": "entity-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-24T19:30:00Z",
+        "duration_ms": 1109,
+        "output": {
+          "verified": true,
+          "incorporation_year": 2018
+        },
+        "error": null
+      },
+      {
+        "id": "n_financials",
+        "node_id": "n_financials",
+        "node_type": "financial-snapshot",
+        "status": "succeeded",
+        "started_at": "2026-05-24T19:30:01Z",
+        "duration_ms": 777,
+        "output": {
+          "revenue_band": "\u20b95-10Cr",
+          "is_healthy": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_sanctions",
+        "node_id": "n_sanctions",
+        "node_type": "sanctions-screening",
+        "status": "succeeded",
+        "started_at": "2026-05-24T19:30:01Z",
+        "duration_ms": 1786,
+        "output": {
+          "matches": 0
+        },
+        "error": null
+      },
+      {
+        "id": "n_directors",
+        "node_id": "n_directors",
+        "node_type": "director-check",
+        "status": "succeeded",
+        "started_at": "2026-05-24T19:30:03Z",
+        "duration_ms": 1224,
+        "output": {
+          "flagged_directors": 0
+        },
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "succeeded",
+        "started_at": "2026-05-24T19:30:04Z",
+        "duration_ms": 1685,
+        "output": {
+          "outcome": "APPROVED"
+        },
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_014",
+    "workflow_id": "wf_009",
+    "workflow_name": "Lending Underwriter Flow",
+    "status": "completed",
+    "started_at": "2026-05-23T19:30:00Z",
+    "duration_ms": 14200,
+    "progress": null,
+    "subject_id": "user_LN00871",
+    "error": null,
+    "workflow_version": "v7",
+    "trigger_input": {
+      "subject_id": "user_LN00871",
+      "loan_amount_requested": 250000,
+      "tenure_months": 24
+    },
+    "steps": [
+      {
+        "id": "n_credit_bureau",
+        "node_id": "n_credit_bureau",
+        "node_type": "credit-bureau-pull",
+        "status": "succeeded",
+        "started_at": "2026-05-23T19:30:00Z",
+        "duration_ms": 3258,
+        "output": {
+          "score": 742,
+          "report_summary": "No defaults",
+          "credit_age_months": 84
+        },
+        "error": null
+      },
+      {
+        "id": "n_bank_statement",
+        "node_id": "n_bank_statement",
+        "node_type": "bank-statement-analysis",
+        "status": "succeeded",
+        "started_at": "2026-05-23T19:30:03Z",
+        "duration_ms": 2599,
+        "output": {
+          "avg_balance": 45000,
+          "salary_consistent": true,
+          "obligations_pct": 0.32
+        },
+        "error": null
+      },
+      {
+        "id": "n_employment",
+        "node_id": "n_employment",
+        "node_type": "employment-history",
+        "status": "succeeded",
+        "started_at": "2026-05-23T19:30:05Z",
+        "duration_ms": 3914,
+        "output": {
+          "verified": true,
+          "current_tenure_months": 27
+        },
+        "error": null
+      },
+      {
+        "id": "n_fraud_signal",
+        "node_id": "n_fraud_signal",
+        "node_type": "fraud-signal",
+        "status": "succeeded",
+        "started_at": "2026-05-23T19:30:09Z",
+        "duration_ms": 1719,
+        "output": {
+          "signals": [],
+          "is_clean": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_score",
+        "node_id": "n_score",
+        "node_type": "underwriter-score",
+        "status": "succeeded",
+        "started_at": "2026-05-23T19:30:11Z",
+        "duration_ms": 1903,
+        "output": {
+          "final_score": 81,
+          "decision": "APPROVED",
+          "limit": 250000
+        },
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_015",
+    "workflow_id": "wf_010",
+    "workflow_name": "Risk Signal Screening",
+    "status": "completed",
+    "started_at": "2026-05-22T19:30:00Z",
+    "duration_ms": 2300,
+    "progress": null,
+    "subject_id": "user_RSK33421",
+    "error": null,
+    "workflow_version": "v1",
+    "trigger_input": {
+      "subject_id": "user_RSK33421",
+      "pan": "ABCDE1234F",
+      "phone": "+91-99000-12345"
+    },
+    "steps": [
+      {
+        "id": "n_device_fp",
+        "node_id": "n_device_fp",
+        "node_type": "device-fingerprint",
+        "status": "succeeded",
+        "started_at": "2026-05-22T19:30:00Z",
+        "duration_ms": 637,
+        "output": {
+          "device_id": "dvc_29xkj9",
+          "anomalies": []
+        },
+        "error": null
+      },
+      {
+        "id": "n_behavioral",
+        "node_id": "n_behavioral",
+        "node_type": "behavioral-signals",
+        "status": "succeeded",
+        "started_at": "2026-05-22T19:30:00Z",
+        "duration_ms": 442,
+        "output": {
+          "typing_anomaly": false,
+          "session_anomaly": false
+        },
+        "error": null
+      },
+      {
+        "id": "n_velocity",
+        "node_id": "n_velocity",
+        "node_type": "velocity-check",
+        "status": "succeeded",
+        "started_at": "2026-05-22T19:30:01Z",
+        "duration_ms": 787,
+        "output": {
+          "score": 5,
+          "flag": "OK"
+        },
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "succeeded",
+        "started_at": "2026-05-22T19:30:01Z",
+        "duration_ms": 718,
+        "output": {
+          "outcome": "ALLOW"
+        },
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_016",
+    "workflow_id": "wf_001",
+    "workflow_name": "India Retail Onboarding (Simple)",
+    "status": "completed",
+    "started_at": "2026-05-21T19:30:00Z",
+    "duration_ms": 3900,
+    "progress": null,
+    "subject_id": "user_8VK40219",
+    "error": null,
+    "workflow_version": "v7",
+    "trigger_input": {
+      "subject_id": "user_8VK40219",
+      "pan": "ABCDE1234F",
+      "phone": "+91-99000-12345"
+    },
+    "steps": [
+      {
+        "id": "n_aadhaar_otp",
+        "node_id": "n_aadhaar_otp",
+        "node_type": "aadhaar-otp-init",
+        "status": "succeeded",
+        "started_at": "2026-05-21T19:30:00Z",
+        "duration_ms": 404,
+        "output": {
+          "reference_id": "ref_x9k3p2"
+        },
+        "error": null
+      },
+      {
+        "id": "n_aadhaar_verify",
+        "node_id": "n_aadhaar_verify",
+        "node_type": "aadhaar-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-21T19:30:00Z",
+        "duration_ms": 896,
+        "output": {
+          "name_match": true,
+          "dob_match": true,
+          "address_match": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_pan_basic",
+        "node_id": "n_pan_basic",
+        "node_type": "pan-basic",
+        "status": "succeeded",
+        "started_at": "2026-05-21T19:30:01Z",
+        "duration_ms": 911,
+        "output": {
+          "pan": "ABCDE1234F",
+          "name": "Verified",
+          "status": "VALID"
+        },
+        "error": null
+      },
+      {
+        "id": "n_pan_aadhaar_link",
+        "node_id": "n_pan_aadhaar_link",
+        "node_type": "pan-aadhaar-linkage",
+        "status": "succeeded",
+        "started_at": "2026-05-21T19:30:02Z",
+        "duration_ms": 646,
+        "output": {
+          "linked": true,
+          "confidence": 0.98
+        },
+        "error": null
+      },
+      {
+        "id": "n_bank_verify",
+        "node_id": "n_bank_verify",
+        "node_type": "bank-account-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-21T19:30:02Z",
+        "duration_ms": 673,
+        "output": {
+          "account_holder": "Verified",
+          "ifsc": "HDFC0001234",
+          "is_valid": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "succeeded",
+        "started_at": "2026-05-21T19:30:03Z",
+        "duration_ms": 683,
+        "output": {
+          "outcome": "APPROVED",
+          "risk_score": 12
+        },
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_017",
+    "workflow_id": "wf_007",
+    "workflow_name": "Programmatic KYC (API-only)",
+    "status": "completed",
+    "started_at": "2026-05-14T19:30:00Z",
+    "duration_ms": 145,
+    "progress": null,
+    "subject_id": "user_PRG77199",
+    "error": null,
+    "workflow_version": "v3",
+    "trigger_input": {
+      "subject_id": "user_PRG77199",
+      "pan": "ABCDE1234F",
+      "phone": "+91-99000-12345"
+    },
+    "steps": [
+      {
+        "id": "n_identity",
+        "node_id": "n_identity",
+        "node_type": "identity-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-14T19:30:00Z",
+        "duration_ms": 54,
+        "output": {
+          "verified": true,
+          "match_score": 0.96
+        },
+        "error": null
+      },
+      {
+        "id": "n_address",
+        "node_id": "n_address",
+        "node_type": "address-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-14T19:30:00Z",
+        "duration_ms": 29,
+        "output": {
+          "verified": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "succeeded",
+        "started_at": "2026-05-14T19:30:00Z",
+        "duration_ms": 30,
+        "output": {
+          "outcome": "APPROVED"
+        },
+        "error": null
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_018",
+    "workflow_id": "wf_011",
+    "workflow_name": "Forex Exchange Enhanced KYC \u2014 Tier-2 / Tier-3 City Variant with Geolocation, Source-of-Funds, and Adverse Media Scan",
+    "status": "failed",
+    "started_at": "2026-05-28T15:30:00Z",
+    "duration_ms": 2100,
+    "progress": null,
+    "subject_id": "user_FX88421P",
+    "error": "Adverse media scan API timed out after 2s",
+    "workflow_version": "v3",
+    "trigger_input": {
+      "subject_id": "user_FX88421P",
+      "pan": "ABCDE1234F",
+      "phone": "+91-99000-12345"
+    },
+    "steps": [
+      {
+        "id": "n_geo",
+        "node_id": "n_geo",
+        "node_type": "geolocation",
+        "status": "succeeded",
+        "started_at": "2026-05-28T15:30:00Z",
+        "duration_ms": 550,
+        "output": {
+          "ip_country": "IN",
+          "claimed_country": "IN",
+          "is_consistent": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_identity",
+        "node_id": "n_identity",
+        "node_type": "identity-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-28T15:30:00Z",
+        "duration_ms": 243,
+        "output": {
+          "verified": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_source_funds",
+        "node_id": "n_source_funds",
+        "node_type": "source-of-funds",
+        "status": "succeeded",
+        "started_at": "2026-05-28T15:30:00Z",
+        "duration_ms": 241,
+        "output": {
+          "declared": "salary",
+          "consistency_check": "pass"
+        },
+        "error": null
+      },
+      {
+        "id": "n_adverse_media",
+        "node_id": "n_adverse_media",
+        "node_type": "adverse-media-scan",
+        "status": "succeeded",
+        "started_at": "2026-05-28T15:30:01Z",
+        "duration_ms": 584,
+        "output": {
+          "matches": 0,
+          "is_clean": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "failed",
+        "started_at": "2026-05-28T15:30:01Z",
+        "duration_ms": 2973,
+        "output": null,
+        "error": "Step failed \u2014 see logs"
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_019",
+    "workflow_id": "wf_005",
+    "workflow_name": "Employee BGV (Standard)",
+    "status": "failed",
+    "started_at": "2026-05-27T11:15:00Z",
+    "duration_ms": 18500,
+    "progress": null,
+    "subject_id": "emp_HR556901",
+    "error": "Education verification source returned 503 (vendor downtime)",
+    "workflow_version": "v3",
+    "trigger_input": {
+      "subject_id": "emp_HR556901",
+      "candidate_email": "candidate@example.com",
+      "role": "Software Engineer"
+    },
+    "steps": [
+      {
+        "id": "n_education_verify",
+        "node_id": "n_education_verify",
+        "node_type": "education-verify",
+        "status": "succeeded",
+        "started_at": "2026-05-27T11:15:00Z",
+        "duration_ms": 3688,
+        "output": {
+          "degree": "B.Tech CSE",
+          "institute_verified": true,
+          "year": 2019
+        },
+        "error": null
+      },
+      {
+        "id": "n_employment_verify",
+        "node_id": "n_employment_verify",
+        "node_type": "employment-history",
+        "status": "succeeded",
+        "started_at": "2026-05-27T11:15:03Z",
+        "duration_ms": 3146,
+        "output": {
+          "verified_employers": 2,
+          "discrepancies": 0
+        },
+        "error": null
+      },
+      {
+        "id": "n_address_proof",
+        "node_id": "n_address_proof",
+        "node_type": "address-proof",
+        "status": "succeeded",
+        "started_at": "2026-05-27T11:15:06Z",
+        "duration_ms": 2486,
+        "output": {
+          "current_address_verified": true,
+          "permanent_address_verified": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_criminal_check",
+        "node_id": "n_criminal_check",
+        "node_type": "criminal-record",
+        "status": "succeeded",
+        "started_at": "2026-05-27T11:15:09Z",
+        "duration_ms": 2901,
+        "output": {
+          "matches": 0,
+          "is_clean": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_court_records",
+        "node_id": "n_court_records",
+        "node_type": "court-records",
+        "status": "succeeded",
+        "started_at": "2026-05-27T11:15:12Z",
+        "duration_ms": 2742,
+        "output": {
+          "matches": 0,
+          "is_clean": true
+        },
+        "error": null
+      },
+      {
+        "id": "n_review",
+        "node_id": "n_review",
+        "node_type": "human-review",
+        "status": "succeeded",
+        "started_at": "2026-05-27T11:15:14Z",
+        "duration_ms": 1413,
+        "output": {
+          "reviewer": "ops_team",
+          "decision": "approved",
+          "notes": "All checks clean"
+        },
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "failed",
+        "started_at": "2026-05-27T11:15:16Z",
+        "duration_ms": 1991,
+        "output": null,
+        "error": "Step failed \u2014 see logs"
+      }
+    ],
+    "warning": null
+  },
+  {
+    "id": "run_020",
+    "workflow_id": "wf_002",
+    "workflow_name": "Signup Fraud Detection",
+    "status": "failed",
+    "started_at": "2026-05-25T19:30:00Z",
+    "duration_ms": 750,
+    "progress": null,
+    "subject_id": "user_FRD90021",
+    "error": "Invalid input \u2014 subject_id format mismatch",
+    "workflow_version": "v3",
+    "trigger_input": {
+      "subject_id": "user_FRD90021",
+      "pan": "ABCDE1234F",
+      "phone": "+91-99000-12345"
+    },
+    "steps": [
+      {
+        "id": "n_device_fp",
+        "node_id": "n_device_fp",
+        "node_type": "device-fingerprint",
+        "status": "succeeded",
+        "started_at": "2026-05-25T19:30:00Z",
+        "duration_ms": 118,
+        "output": {
+          "device_id": "dvc_82xkj1",
+          "is_emulator": false,
+          "is_rooted": false
+        },
+        "error": null
+      },
+      {
+        "id": "n_ip_check",
+        "node_id": "n_ip_check",
+        "node_type": "ip-enrichment",
+        "status": "succeeded",
+        "started_at": "2026-05-25T19:30:00Z",
+        "duration_ms": 104,
+        "output": {
+          "ip": "103.21.x.x",
+          "country": "IN",
+          "is_vpn": false,
+          "is_proxy": false
+        },
+        "error": null
+      },
+      {
+        "id": "n_velocity",
+        "node_id": "n_velocity",
+        "node_type": "velocity-check",
+        "status": "succeeded",
+        "started_at": "2026-05-25T19:30:00Z",
+        "duration_ms": 201,
+        "output": {
+          "signups_24h": 1,
+          "signups_7d": 1,
+          "flag": "OK"
+        },
+        "error": null
+      },
+      {
+        "id": "n_risk_score",
+        "node_id": "n_risk_score",
+        "node_type": "risk-score",
+        "status": "succeeded",
+        "started_at": "2026-05-25T19:30:00Z",
+        "duration_ms": 90,
+        "output": {
+          "score": 14,
+          "tier": "low"
+        },
+        "error": null
+      },
+      {
+        "id": "n_decision",
+        "node_id": "n_decision",
+        "node_type": "decision-branch",
+        "status": "failed",
+        "started_at": "2026-05-25T19:30:00Z",
+        "duration_ms": 993,
+        "output": null,
+        "error": "Step failed \u2014 see logs"
+      }
+    ],
+    "warning": null
+  }
+]
