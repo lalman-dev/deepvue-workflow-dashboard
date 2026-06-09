@@ -1,9 +1,15 @@
+import PageContainer from "@/components/layout/PageContainer";
+import PageHeader from "@/components/shared/PageHeader";
+
 const RunsPage = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <PageContainer>
+      <PageHeader
+        title="Runs"
+        description="Monitor workflow execution history."
+      />
+    </PageContainer>
+  );
+};
 
-export default RunsPage
+export default RunsPage;

@@ -1,7 +1,15 @@
+import PageContainer from "@/components/layout/PageContainer";
+import PageHeader from "@/components/shared/PageHeader";
+
 const RunDetailPage = () => {
   return (
-    <div>RunDetailPage</div>
-  )
-}
+    <PageContainer>
+      <PageHeader
+        title="Run Details"
+        description="Execution timeline and metadata."
+      />
+    </PageContainer>
+  );
+};
 
-export default RunDetailPage
+export default RunDetailPage;

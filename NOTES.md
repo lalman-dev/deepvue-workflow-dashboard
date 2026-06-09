@@ -16,3 +16,14 @@ Build a polished React dashboard that feels like a natural extension of Deepvue'
 ## Personal Rule
 
 Every implementation decision should be explainable during the live discussion round.
+
+## Dashboard Shell
+
+Implemented a reusable shell before feature work.
+
+Benefits:
+
+- Consistent layout
+- Shared navigation
+- Easier future extension
+- Matches dashboard architecture from references

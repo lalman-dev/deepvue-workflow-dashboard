@@ -34,3 +34,14 @@ Workflows page will initially render normally and be evaluated against dataset s
 
 Reason:
 Optimize based on actual scale requirements rather than prematurely.
+
+## Design Tokens
+
+Visual styling is centralized through shared design tokens to maintain consistency across all routes.
+
+## Layout Strategy
+
+A shared AppShell owns navigation and page layout.
+
+Reason:
+All assignment routes belong to the same dashboard experience.
