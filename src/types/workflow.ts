@@ -8,3 +8,7 @@ export interface Workflow {
   last_modified: string;
   description: string;
 }
+
+export type WorkflowSort = "last_modified" | "name" | "nodes";
+
+export type WorkflowFilterStatus = "all" | "published" | "draft" | "archived";
