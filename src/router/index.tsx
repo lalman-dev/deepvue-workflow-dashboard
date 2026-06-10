@@ -26,6 +26,10 @@ export const router = createBrowserRouter([
         path: `${ROUTES.RUNS}/:id`,
         element: <RunDetailPage />,
       },
+      {
+        path: "/runs/:id",
+        element: <RunDetailPage />,
+      },
     ],
   },
 ]);

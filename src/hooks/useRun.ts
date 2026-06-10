@@ -1,41 +1,16 @@
-import { useEffect, useState } from "react";
-import { getRunById } from "@/data/runs";
-import type { Run } from "@/types/run";
+import { useMemo } from "react";
+import { useRuns } from "./useRuns";
 
-export function useRun(runId: string) {
-  const [data, setData] = useState<Run | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+export function useRun(runId: string | undefined) {
+  const { data, isLoading, error } = useRuns();
 
-  useEffect(() => {
-    let isMounted = true;
-    const loadRun = async () => {
-      try {
-        setIsLoading(true);
-        setError(null);
-        const run = await getRunById(runId);
-        if (!isMounted) return;
-        if (!run) {
-          throw new Error("Run not found");
-        }
-        setData(run);
-      } catch (err) {
-        if (!isMounted) return;
-        setError(err instanceof Error ? err.message : "Failed to load run.");
-      } finally {
-        if (!isMounted) return;
-        setIsLoading(false);
-      }
-    };
-
-    void loadRun();
-    return () => {
-      isMounted = false;
-    };
-  }, [runId]);
+  const run = useMemo(
+    () => data.find((item) => item.id === runId),
+    [data, runId],
+  );
 
   return {
-    data,
+    run,
     isLoading,
     error,
   };
