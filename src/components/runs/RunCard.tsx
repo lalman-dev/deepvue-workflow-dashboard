@@ -53,9 +53,10 @@ export default function RunCard({ run, onCancel, onClick }: Props) {
 
       <div className="mt-3 flex items-center justify-between">
         <div className="text-sm text-slate-500">
-          {run.status === "running"
-            ? "In progress"
-            : formatDuration(run.duration_ms)}
+          {run.status === "running" && "In progress"}
+          {run.status === "waiting" && "Waiting to start"}
+          {(run.status === "completed" || run.status === "failed") &&
+            formatDuration(run.duration_ms)}
         </div>
 
         {canCancel && (
