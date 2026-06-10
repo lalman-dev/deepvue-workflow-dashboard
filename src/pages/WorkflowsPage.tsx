@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { useVirtualizer } from "@tanstack/react-virtual";
 import PageContainer from "@/components/layout/PageContainer";
 import PageHeader from "@/components/shared/PageHeader";
 import EmptyState from "@/components/shared/EmptyState";
@@ -20,6 +21,27 @@ import type {
 const DEFAULT_STATUS: WorkflowFilterStatus = "all";
 const DEFAULT_SORT: WorkflowSort = "last_modified";
 
+// How many columns at each breakpoint — must match Tailwind grid classes below
+function useColumnCount() {
+  const [cols, setCols] = useState(() => {
+    if (window.innerWidth >= 1280) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  });
+
+  useEffect(() => {
+    const observer = new ResizeObserver(() => {
+      if (window.innerWidth >= 1280) setCols(3);
+      else if (window.innerWidth >= 768) setCols(2);
+      else setCols(1);
+    });
+    observer.observe(document.body);
+    return () => observer.disconnect();
+  }, []);
+
+  return cols;
+}
+
 export default function WorkflowsPage() {
   const { data: workflows, isLoading, error } = useWorkflows();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -38,52 +60,41 @@ export default function WorkflowsPage() {
   const [activeWorkflow, setActiveWorkflow] = useState<Workflow | null>(null);
   const [isRunDialogOpen, setIsRunDialogOpen] = useState(false);
 
+  const cols = useColumnCount();
+  const parentRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const params = new URLSearchParams();
-    if (debouncedSearch) {
-      params.set("search", debouncedSearch);
-    }
-    if (status !== DEFAULT_STATUS) {
-      params.set("status", status);
-    }
-    if (sort !== DEFAULT_SORT) {
-      params.set("sort", sort);
-    }
-    setSearchParams(params);
+    if (debouncedSearch) params.set("search", debouncedSearch);
+    if (status !== DEFAULT_STATUS) params.set("status", status);
+    if (sort !== DEFAULT_SORT) params.set("sort", sort);
+    setSearchParams(params, { replace: true });
   }, [debouncedSearch, status, sort, setSearchParams]);
-  const counts = useMemo(() => {
-    return {
+
+  const counts = useMemo(
+    () => ({
       all: workflows.length,
-      published: workflows.filter((workflow) => workflow.status === "published")
-        .length,
-      draft: workflows.filter((workflow) => workflow.status === "draft").length,
-      archived: workflows.filter((workflow) => workflow.status === "archived")
-        .length,
-    };
-  }, [workflows]);
+      published: workflows.filter((w) => w.status === "published").length,
+      draft: workflows.filter((w) => w.status === "draft").length,
+      archived: workflows.filter((w) => w.status === "archived").length,
+    }),
+    [workflows],
+  );
 
   const filteredWorkflows = useMemo(() => {
     let result = [...workflows];
-
-    if (debouncedSearch) {
-      result = result.filter((workflow) =>
-        workflow.name.toLowerCase().includes(debouncedSearch.toLowerCase()),
+    if (debouncedSearch)
+      result = result.filter((w) =>
+        w.name.toLowerCase().includes(debouncedSearch.toLowerCase()),
       );
-    }
-
-    if (status !== "all") {
-      result = result.filter((workflow) => workflow.status === status);
-    }
-
+    if (status !== "all") result = result.filter((w) => w.status === status);
     switch (sort) {
       case "name":
         result.sort((a, b) => a.name.localeCompare(b.name));
         break;
-
       case "nodes":
         result.sort((a, b) => b.nodes - a.nodes);
         break;
-
       case "last_modified":
       default:
         result.sort(
@@ -92,20 +103,34 @@ export default function WorkflowsPage() {
             new Date(a.last_modified).getTime(),
         );
     }
-
     return result;
   }, [workflows, debouncedSearch, status, sort]);
 
+  // Build rows: group cards into rows of `cols` length
+  const rows = useMemo(() => {
+    const result: Workflow[][] = [];
+    for (let i = 0; i < filteredWorkflows.length; i += cols) {
+      result.push(filteredWorkflows.slice(i, i + cols));
+    }
+    return result;
+  }, [filteredWorkflows, cols]);
+
+  const rowVirtualizer = useVirtualizer({
+    count: rows.length,
+    getScrollElement: () => parentRef.current,
+    estimateSize: () => 280,
+    overscan: 3,
+    measureElement:
+      typeof window !== "undefined"
+        ? (el) => el.getBoundingClientRect().height
+        : undefined,
+  });
+
   const handleSelectWorkflow = (workflowId: string, checked: boolean) => {
-    setSelectedWorkflowIds((previous) => {
-      const next = new Set(previous);
-
-      if (checked) {
-        next.add(workflowId);
-      } else {
-        next.delete(workflowId);
-      }
-
+    setSelectedWorkflowIds((prev) => {
+      const next = new Set(prev);
+      if (checked) next.add(workflowId);
+      else next.delete(workflowId);
       return next;
     });
   };
@@ -115,21 +140,10 @@ export default function WorkflowsPage() {
     setIsRunDialogOpen(true);
   };
 
-  const handleOpenWorkflow = (workflowId: string) => {
-    console.log(workflowId);
-  };
-
-  const handleArchiveSelected = () => {
-    console.log("archive", [...selectedWorkflowIds]);
-  };
-
-  const handleBulkRun = () => {
-    console.log("bulk-run", [...selectedWorkflowIds]);
-  };
-
-  const handleClearSelection = () => {
-    setSelectedWorkflowIds(new Set());
-  };
+  const handleOpenWorkflow = (workflowId: string) => console.log(workflowId);
+  const handleArchiveSelected = () => console.log("archive", [...selectedWorkflowIds]);
+  const handleBulkRun = () => console.log("bulk-run", [...selectedWorkflowIds]);
+  const handleClearSelection = () => setSelectedWorkflowIds(new Set());
 
   return (
     <PageContainer>
@@ -150,10 +164,8 @@ export default function WorkflowsPage() {
 
       {isLoading && (
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {Array.from({
-            length: 6,
-          }).map((_, index) => (
-            <WorkflowCardSkeleton key={index} />
+          {Array.from({ length: 6 }).map((_, i) => (
+            <WorkflowCardSkeleton key={i} />
           ))}
         </div>
       )}
@@ -168,23 +180,53 @@ export default function WorkflowsPage() {
       )}
 
       {!isLoading && !error && filteredWorkflows.length > 0 && (
-        <div className="space-y-4">
-          <div className="text-sm text-slate-500">
+        <div className="space-y-2">
+          <p className="text-sm text-slate-500">
             Showing {filteredWorkflows.length} workflow
             {filteredWorkflows.length !== 1 ? "s" : ""}
-          </div>
+          </p>
 
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {filteredWorkflows.map((workflow) => (
-              <WorkflowCard
-                key={workflow.id}
-                workflow={workflow}
-                isSelected={selectedWorkflowIds.has(workflow.id)}
-                onSelect={handleSelectWorkflow}
-                onRun={handleRunWorkflow}
-                onOpen={handleOpenWorkflow}
-              />
-            ))}
+          {/* Virtualized scroll container — fixed height window */}
+          <div
+            ref={parentRef}
+            className="overflow-auto"
+            style={{ height: "calc(100vh - 320px)", minHeight: 400 }}
+          >
+            <div
+              style={{
+                height: rowVirtualizer.getTotalSize(),
+                position: "relative",
+              }}
+            >
+              {rowVirtualizer.getVirtualItems().map((virtualRow) => {
+                const rowItems = rows[virtualRow.index];
+                return (
+                  <div
+                    key={virtualRow.key}
+                    data-index={virtualRow.index}
+                    ref={rowVirtualizer.measureElement}
+                    style={{
+                      position: "absolute",
+                      top: virtualRow.start,
+                      left: 0,
+                      right: 0,
+                    }}
+                    className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 pb-4"
+                  >
+                    {rowItems.map((workflow) => (
+                      <WorkflowCard
+                        key={workflow.id}
+                        workflow={workflow}
+                        isSelected={selectedWorkflowIds.has(workflow.id)}
+                        onSelect={handleSelectWorkflow}
+                        onRun={handleRunWorkflow}
+                        onOpen={handleOpenWorkflow}
+                      />
+                    ))}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       )}

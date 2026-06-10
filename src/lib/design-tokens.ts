@@ -1,10 +1,12 @@
 export const DESIGN_TOKENS = {
   colors: {
-    background: "#F5F6F8",
-    surface: "#FFFFFF",
-    primary: "#1B1464",
-    primaryHover: "#241B7A",
-    border: "#E5E7EB",
+    primary: "bg-violet-900",
+    primaryHover: "hover:bg-violet-800",
+    pageBackground: "bg-slate-100",
+    cardBackground: "bg-white",
+    border: "border-slate-200",
+    textPrimary: "text-slate-900",
+    textSecondary: "text-slate-500",
   },
 
   radius: {

@@ -30,7 +30,7 @@ export default function WorkflowCard({
   );
 
   return (
-    <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-violet-200 hover:shadow-md">
+    <article className="rounded-2xl border border-slate-200 bg-white p-4 group shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-violet-200 hover:shadow-lg">
       <div className="flex items-start justify-between gap-4">
         <Checkbox
           checked={isSelected}
@@ -68,7 +68,7 @@ export default function WorkflowCard({
         <div className="flex gap-2">
           <Button
             size="sm"
-            className="flex-1"
+            className="flex-1 bg-violet-900 hover:bg-violet-800 text-white"
             onClick={(e) => {
               e.stopPropagation();
               onRun(workflow);
@@ -79,6 +79,7 @@ export default function WorkflowCard({
 
           <Button
             size="sm"
+            className="hover:bg-violet-50 hover:border-violet-200"
             variant="outline"
             onClick={(e) => {
               e.stopPropagation();
