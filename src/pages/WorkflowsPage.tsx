@@ -21,7 +21,6 @@ import type {
 const DEFAULT_STATUS: WorkflowFilterStatus = "all";
 const DEFAULT_SORT: WorkflowSort = "last_modified";
 
-// How many columns at each breakpoint — must match Tailwind grid classes below
 function useColumnCount() {
   const [cols, setCols] = useState(() => {
     if (window.innerWidth >= 1280) return 3;
@@ -106,7 +105,6 @@ export default function WorkflowsPage() {
     return result;
   }, [workflows, debouncedSearch, status, sort]);
 
-  // Build rows: group cards into rows of `cols` length
   const rows = useMemo(() => {
     const result: Workflow[][] = [];
     for (let i = 0; i < filteredWorkflows.length; i += cols) {
@@ -141,7 +139,8 @@ export default function WorkflowsPage() {
   };
 
   const handleOpenWorkflow = (workflowId: string) => console.log(workflowId);
-  const handleArchiveSelected = () => console.log("archive", [...selectedWorkflowIds]);
+  const handleArchiveSelected = () =>
+    console.log("archive", [...selectedWorkflowIds]);
   const handleBulkRun = () => console.log("bulk-run", [...selectedWorkflowIds]);
   const handleClearSelection = () => setSelectedWorkflowIds(new Set());
 
@@ -186,7 +185,6 @@ export default function WorkflowsPage() {
             {filteredWorkflows.length !== 1 ? "s" : ""}
           </p>
 
-          {/* Virtualized scroll container — fixed height window */}
           <div
             ref={parentRef}
             className="overflow-auto"

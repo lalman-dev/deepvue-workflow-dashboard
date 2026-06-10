@@ -1,15 +1,13 @@
-import { useEffect, useState } from "react";
-import type { Workflow } from "@/types/workflow";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
+import type { Workflow } from "@/types/workflow";
 
 interface RunWorkflowDialogProps {
   workflow: Workflow | null;
@@ -22,15 +20,11 @@ export default function RunWorkflowDialog({
   open,
   onOpenChange,
 }: RunWorkflowDialogProps) {
-  const [subjectId, setSubjectId] = useState("");
+  if (!workflow) return null;
 
-  useEffect(() => {
-    if (!open) setSubjectId("");
-  }, [open]);
+  const handleRun = () => {
+    console.log("Running workflow:", workflow.id);
 
-  const handleSubmit = () => {
-    if (!workflow) return;
-    console.log({ workflow_id: workflow.id, subject_id: subjectId });
     onOpenChange(false);
   };
 
@@ -39,48 +33,38 @@ export default function RunWorkflowDialog({
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Run Workflow</DialogTitle>
+
           <DialogDescription>
-            Start an execution of this workflow.
+            Review workflow details before execution.
           </DialogDescription>
         </DialogHeader>
 
-        <div className="space-y-4 pt-1">
-          <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-            <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
-              Workflow
-            </p>
-            <p className="mt-0.5 text-sm font-medium text-slate-900 leading-snug">
-              {workflow?.name}
-            </p>
+        <div className="space-y-4 py-2">
+          <div>
+            <p className="text-sm text-slate-500">Workflow Name</p>
+            <p className="font-medium">{workflow.name}</p>
           </div>
-
-          <div className="space-y-1.5">
-            <label
-              htmlFor="subject-id"
-              className="text-sm font-medium text-slate-700"
-            >
-              Subject ID
-            </label>
-            <Input
-              id="subject-id"
-              placeholder="e.g. user_abc123"
-              value={subjectId}
-              onChange={(e) => setSubjectId(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") handleSubmit();
-              }}
-              autoFocus
-            />
+          <div>
+            <p className="text-sm text-slate-500">Status</p>
+            <p className="capitalize">{workflow.status}</p>
           </div>
-
-          <Button
-            className="w-full gap-2 bg-violet-900 hover:bg-violet-800 text-white"
-            onClick={handleSubmit}
-          >
-            <Play className="h-4 w-4" />
-            Start Run
-          </Button>
+          <div>
+            <p className="text-sm text-slate-500">Nodes</p>
+            <p>{workflow.nodes}</p>
+          </div>
         </div>
+
+        <DialogFooter>
+          <Button variant="outline" onClick={() => onOpenChange(false)}>
+            Cancel
+          </Button>
+          <Button
+            className="bg-violet-900 hover:bg-violet-800 text-white"
+            onClick={handleRun}
+          >
+            Run Workflow
+          </Button>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   );
