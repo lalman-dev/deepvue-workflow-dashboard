@@ -7,9 +7,15 @@ import ErrorState from "@/components/shared/ErrorState";
 import WorkflowToolbar from "@/components/workflows/WorkflowToolbar";
 import WorkflowCard from "@/components/workflows/WorkflowCard";
 import WorkflowCardSkeleton from "@/components/workflows/WorkflowCardSkeleton";
+import RunWorkflowDialog from "@/components/workflows/RunWorkflowDialog";
+import BulkActionBar from "@/components/workflows/BulkActionBar";
 import { useWorkflows } from "@/hooks/useWorkflows";
 import { useDebounce } from "@/hooks/useDebounce";
-import type { WorkflowFilterStatus, WorkflowSort } from "@/types/workflow";
+import type {
+  Workflow,
+  WorkflowFilterStatus,
+  WorkflowSort,
+} from "@/types/workflow";
 
 const DEFAULT_STATUS: WorkflowFilterStatus = "all";
 const DEFAULT_SORT: WorkflowSort = "last_modified";
@@ -26,6 +32,11 @@ export default function WorkflowsPage() {
   const [status, setStatus] = useState<WorkflowFilterStatus>(initialStatus);
   const [sort, setSort] = useState<WorkflowSort>(initialSort);
   const debouncedSearch = useDebounce(search, 300);
+  const [selectedWorkflowIds, setSelectedWorkflowIds] = useState<Set<string>>(
+    new Set(),
+  );
+  const [activeWorkflow, setActiveWorkflow] = useState<Workflow | null>(null);
+  const [isRunDialogOpen, setIsRunDialogOpen] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams();
@@ -40,7 +51,6 @@ export default function WorkflowsPage() {
     }
     setSearchParams(params);
   }, [debouncedSearch, status, sort, setSearchParams]);
-
   const counts = useMemo(() => {
     return {
       all: workflows.length,
@@ -54,6 +64,7 @@ export default function WorkflowsPage() {
 
   const filteredWorkflows = useMemo(() => {
     let result = [...workflows];
+
     if (debouncedSearch) {
       result = result.filter((workflow) =>
         workflow.name.toLowerCase().includes(debouncedSearch.toLowerCase()),
@@ -84,6 +95,41 @@ export default function WorkflowsPage() {
 
     return result;
   }, [workflows, debouncedSearch, status, sort]);
+
+  const handleSelectWorkflow = (workflowId: string, checked: boolean) => {
+    setSelectedWorkflowIds((previous) => {
+      const next = new Set(previous);
+
+      if (checked) {
+        next.add(workflowId);
+      } else {
+        next.delete(workflowId);
+      }
+
+      return next;
+    });
+  };
+
+  const handleRunWorkflow = (workflow: Workflow) => {
+    setActiveWorkflow(workflow);
+    setIsRunDialogOpen(true);
+  };
+
+  const handleOpenWorkflow = (workflowId: string) => {
+    console.log(workflowId);
+  };
+
+  const handleArchiveSelected = () => {
+    console.log("archive", [...selectedWorkflowIds]);
+  };
+
+  const handleBulkRun = () => {
+    console.log("bulk-run", [...selectedWorkflowIds]);
+  };
+
+  const handleClearSelection = () => {
+    setSelectedWorkflowIds(new Set());
+  };
 
   return (
     <PageContainer>
@@ -130,10 +176,32 @@ export default function WorkflowsPage() {
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {filteredWorkflows.map((workflow) => (
-              <WorkflowCard key={workflow.id} workflow={workflow} />
+              <WorkflowCard
+                key={workflow.id}
+                workflow={workflow}
+                isSelected={selectedWorkflowIds.has(workflow.id)}
+                onSelect={handleSelectWorkflow}
+                onRun={handleRunWorkflow}
+                onOpen={handleOpenWorkflow}
+              />
             ))}
           </div>
         </div>
+      )}
+
+      <RunWorkflowDialog
+        workflow={activeWorkflow}
+        open={isRunDialogOpen}
+        onOpenChange={setIsRunDialogOpen}
+      />
+
+      {selectedWorkflowIds.size > 0 && (
+        <BulkActionBar
+          count={selectedWorkflowIds.size}
+          onArchive={handleArchiveSelected}
+          onBulkRun={handleBulkRun}
+          onClear={handleClearSelection}
+        />
       )}
     </PageContainer>
   );
