@@ -1,12 +1,13 @@
+import { useEffect, useState } from "react";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import type { Workflow } from "@/types/workflow";
 
 interface RunWorkflowDialogProps {
@@ -20,10 +21,21 @@ export default function RunWorkflowDialog({
   open,
   onOpenChange,
 }: RunWorkflowDialogProps) {
+  const [subjectId, setSubjectId] = useState("");
+
+  useEffect(() => {
+    if (!open) {
+      setSubjectId("");
+    }
+  }, [open]);
+
   if (!workflow) return null;
 
-  const handleRun = () => {
-    console.log("Running workflow:", workflow.id);
+  const handleSubmit = () => {
+    console.log({
+      workflow_id: workflow.id,
+      subject_id: subjectId,
+    });
 
     onOpenChange(false);
   };
@@ -34,37 +46,37 @@ export default function RunWorkflowDialog({
         <DialogHeader>
           <DialogTitle>Run Workflow</DialogTitle>
 
-          <DialogDescription>
-            Review workflow details before execution.
-          </DialogDescription>
+          <DialogDescription>Start a new workflow execution.</DialogDescription>
         </DialogHeader>
 
-        <div className="space-y-4 py-2">
+        <div className="space-y-4">
           <div>
-            <p className="text-sm text-slate-500">Workflow Name</p>
+            <p className="text-sm text-slate-500">Workflow</p>
+
             <p className="font-medium">{workflow.name}</p>
           </div>
-          <div>
-            <p className="text-sm text-slate-500">Status</p>
-            <p className="capitalize">{workflow.status}</p>
+
+          <div className="space-y-2">
+            <label htmlFor="subject-id" className="text-sm font-medium">
+              Subject ID
+            </label>
+
+            <Input
+              id="subject-id"
+              placeholder="Enter subject ID"
+              value={subjectId}
+              onChange={(e) => setSubjectId(e.target.value)}
+            />
           </div>
-          <div>
-            <p className="text-sm text-slate-500">Nodes</p>
-            <p>{workflow.nodes}</p>
+
+          <div className="flex justify-end gap-2">
+            <Button variant="outline" onClick={() => onOpenChange(false)}>
+              Cancel
+            </Button>
+
+            <Button onClick={handleSubmit}>Start</Button>
           </div>
         </div>
-
-        <DialogFooter>
-          <Button variant="outline" onClick={() => onOpenChange(false)}>
-            Cancel
-          </Button>
-          <Button
-            className="bg-violet-900 hover:bg-violet-800 text-white"
-            onClick={handleRun}
-          >
-            Run Workflow
-          </Button>
-        </DialogFooter>
       </DialogContent>
     </Dialog>
   );

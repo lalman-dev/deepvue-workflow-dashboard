@@ -1,5 +1,11 @@
 import { ArrowLeft } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { ChevronDown } from "lucide-react";
 
 import PageContainer from "@/components/layout/PageContainer";
 import EmptyState from "@/components/shared/EmptyState";
@@ -150,11 +156,17 @@ export default function RunDetailPage() {
           </div>
 
           <div className="rounded-2xl border bg-white p-6">
-            <h2 className="mb-4 text-lg font-semibold">Trigger Input</h2>
-
-            <pre className="overflow-auto rounded-lg bg-slate-50 p-3 text-xs">
-              {JSON.stringify(run.trigger_input, null, 2)}
-            </pre>
+            <Collapsible defaultOpen>
+              <CollapsibleTrigger className="flex w-full items-center justify-between text-left">
+                <h2 className="text-lg font-semibold">Trigger Input</h2>
+                <ChevronDown size={18} />
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                <pre className="mt-4 overflow-auto rounded-lg bg-slate-50 p-3 text-xs">
+                  {JSON.stringify(run.trigger_input, null, 2)}
+                </pre>
+              </CollapsibleContent>
+            </Collapsible>
           </div>
         </aside>
       </div>
