@@ -114,6 +114,15 @@ The runs page was designed with larger datasets in mind and tested against the p
 
 ---
 
+## Hover & Active States
+
+- **Workflow + Run cards** — `hover:border-violet-300 hover:shadow-md` on hover. Elevates the card subtly without layout shift, signals clickability without needing a cursor change alone.
+- **Status filter pills** — inactive pills use `hover:border-slate-300 hover:bg-slate-50`. Active pill gets the primary navy fill. Keeps the interaction cost low for frequent filter switching.
+- **Run modal** — Escape closes via Radix Dialog's built-in keyboard handling. Enter submits the form from the subject ID input.
+- **Bulk action bar** — slides in from the bottom on first selection. Stays sticky so it's always reachable without scrolling back up.
+
+--
+
 ## Status Badge Palette
 
 ### Positive States
@@ -218,6 +227,7 @@ Runs containing warnings render a dedicated warning banner.
 - Collapsible trigger input
 - Empty state
 - Not-found state
+
 ---
 
 ## What I Would Improve If i have more time
