@@ -1,15 +1,15 @@
-import { useMemo, useState, useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import PageContainer from "@/components/layout/PageContainer";
 import PageHeader from "@/components/shared/PageHeader";
+import EmptyState from "@/components/shared/EmptyState";
+import ErrorState from "@/components/shared/ErrorState";
 import WorkflowToolbar from "@/components/workflows/WorkflowToolbar";
+import WorkflowCard from "@/components/workflows/WorkflowCard";
+import WorkflowCardSkeleton from "@/components/workflows/WorkflowCardSkeleton";
 import { useWorkflows } from "@/hooks/useWorkflows";
 import { useDebounce } from "@/hooks/useDebounce";
-import type {
-  Workflow,
-  WorkflowFilterStatus,
-  WorkflowSort,
-} from "@/types/workflow";
+import type { WorkflowFilterStatus, WorkflowSort } from "@/types/workflow";
 
 const DEFAULT_STATUS: WorkflowFilterStatus = "all";
 const DEFAULT_SORT: WorkflowSort = "last_modified";
@@ -91,6 +91,7 @@ export default function WorkflowsPage() {
         title="Workflows Library"
         description="Browse and manage reusable workflows."
       />
+
       <WorkflowToolbar
         search={search}
         status={status}
@@ -100,13 +101,38 @@ export default function WorkflowsPage() {
         onStatusChange={setStatus}
         onSortChange={setSort}
       />
-      {isLoading && <div>Loading workflows...</div>}
-      {error && <div>{error}</div>}
-      {!isLoading && !error && (
-        <div className="rounded-2xl bg-white p-4 shadow-sm">
-          <p className="text-sm text-slate-500">
-            {filteredWorkflows.length} workflows found
-          </p>
+
+      {isLoading && (
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {Array.from({
+            length: 6,
+          }).map((_, index) => (
+            <WorkflowCardSkeleton key={index} />
+          ))}
+        </div>
+      )}
+
+      {!isLoading && error && <ErrorState message={error} />}
+
+      {!isLoading && !error && filteredWorkflows.length === 0 && (
+        <EmptyState
+          title="No workflows found"
+          description="Try adjusting your search or filters."
+        />
+      )}
+
+      {!isLoading && !error && filteredWorkflows.length > 0 && (
+        <div className="space-y-4">
+          <div className="text-sm text-slate-500">
+            Showing {filteredWorkflows.length} workflow
+            {filteredWorkflows.length !== 1 ? "s" : ""}
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {filteredWorkflows.map((workflow) => (
+              <WorkflowCard key={workflow.id} workflow={workflow} />
+            ))}
+          </div>
         </div>
       )}
     </PageContainer>
