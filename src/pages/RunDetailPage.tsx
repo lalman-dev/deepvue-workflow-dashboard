@@ -153,7 +153,10 @@ export default function RunDetailPage() {
             <Collapsible defaultOpen>
               <CollapsibleTrigger className="flex w-full items-center justify-between">
                 <h2 className="text-lg font-semibold">Trigger Input</h2>
-                <ChevronDown size={18} />
+                <ChevronDown
+                  size={18}
+                  className="transition-transform group-data-[state=open]:rotate-180"
+                />
               </CollapsibleTrigger>
               <CollapsibleContent>
                 <pre className=" mt-4 overflow-auto rounded-lg bg-slate-50  p-4 text-xs">

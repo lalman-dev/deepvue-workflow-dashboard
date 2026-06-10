@@ -28,7 +28,11 @@ export default function TimelineStep({ step }: Props) {
           <div className="mt-1">{getIcon()}</div>
           <div>
             <h3 className="font-medium">{step.node_id}</h3>
-            <p className="text-sm text-slate-500">{step.node_type}</p>
+            <div className="mt-2">
+              <span className="inline-flex rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-600">
+                {step.node_type}
+              </span>
+            </div>
           </div>
         </div>
         <StatusBadge status={step.status} />

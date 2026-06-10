@@ -12,6 +12,9 @@ const statusStyles: Record<string, string> = {
   running: "bg-violet-100 text-violet-700",
   waiting: "bg-amber-100 text-amber-700",
   failed: "bg-rose-100 text-rose-700",
+  succeeded: "bg-emerald-100 text-emerald-700",
+  pending: "bg-amber-100 text-amber-700",
+  not_started: "bg-slate-100 text-slate-500",
 };
 
 export default function StatusBadge({ status }: StatusBadgeProps) {
