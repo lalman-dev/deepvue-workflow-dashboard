@@ -1,15 +1,17 @@
-import PageContainer from "@/components/layout/PageContainer";
-import PageHeader from "@/components/shared/PageHeader";
+import { useWorkflows } from "@/hooks/useWorkflows";
 
 const WorkflowsPage = () => {
-  return (
-    <PageContainer>
-      <PageHeader
-        title="Workflows Library"
-        description="Browse and manage reusable workflows."
-      />
-    </PageContainer>
-  );
+  const { data, isLoading, error } = useWorkflows();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  return <div>{data.length} workflows loaded</div>;
 };
 
 export default WorkflowsPage;
