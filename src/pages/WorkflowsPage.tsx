@@ -113,6 +113,7 @@ export default function WorkflowsPage() {
     return result;
   }, [filteredWorkflows, cols]);
 
+  // eslint-disable-next-line react-hooks/incompatible-library -- TanStack Virtual intentionally returns non-memoizable functions; this is expected
   const rowVirtualizer = useVirtualizer({
     count: rows.length,
     getScrollElement: () => parentRef.current,

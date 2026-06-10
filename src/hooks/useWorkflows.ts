@@ -11,18 +11,19 @@ export function useWorkflows() {
     let isMounted = true;
 
     const loadWorkflows = async () => {
+      setIsLoading(true);
+      setError(null);
       try {
-        setIsLoading(true);
-        setError(null);
         const workflows = await getWorkflows();
-        if (!isMounted) return;
-        setData(workflows);
+        if (isMounted) {
+          setData(workflows);
+          setIsLoading(false);
+        }
       } catch {
-        if (!isMounted) return;
-        setError("Failed to load workflows.");
-      } finally {
-        if (!isMounted) return;
-        setIsLoading(false);
+        if (isMounted) {
+          setError("Failed to load workflows.");
+          setIsLoading(false);
+        }
       }
     };
 
@@ -32,9 +33,5 @@ export function useWorkflows() {
     };
   }, []);
 
-  return {
-    data,
-    isLoading,
-    error,
-  };
+  return { data, isLoading, error };
 }

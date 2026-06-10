@@ -24,7 +24,7 @@ export default function RunCard({ run, onCancel, onClick }: Props) {
           </h3>
 
           <div className="mt-1 flex flex-wrap items-center gap-2 text-sm text-slate-500">
-            <span>Run #{run.id}</span>
+            <span>{run.id.slice(-8)}</span>
             <span>•</span>
             <span>{formatRelativeTime(run.started_at)}</span>
           </div>

@@ -9,19 +9,21 @@ export function useRuns() {
 
   useEffect(() => {
     let isMounted = true;
+
     const loadRuns = async () => {
+      setIsLoading(true);
+      setError(null);
       try {
-        setIsLoading(true);
-        setError(null);
         const runs = await getRuns();
-        if (!isMounted) return;
-        setData(runs);
+        if (isMounted) {
+          setData(runs);
+          setIsLoading(false);
+        }
       } catch {
-        if (!isMounted) return;
-        setError("Failed to load runs.");
-      } finally {
-        if (!isMounted) return;
-        setIsLoading(false);
+        if (isMounted) {
+          setError("Failed to load runs.");
+          setIsLoading(false);
+        }
       }
     };
 
@@ -31,9 +33,5 @@ export function useRuns() {
     };
   }, []);
 
-  return {
-    data,
-    isLoading,
-    error,
-  };
+  return { data, isLoading, error };
 }

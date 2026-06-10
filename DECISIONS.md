@@ -1,47 +1,25 @@
 # Architectural Decisions
 
-## Routing
+## shadcn/ui over MUI
 
-React Router
+MUI ships Material Design on top of your styles — overriding it to match Deepvue's violet/slate aesthetic requires fighting the library. shadcn/ui gives unstyled Radix primitives composed with Tailwind, so the visual layer is entirely ours.
 
-Reason:
-Explicitly required by the assignment and aligns with the production stack mentioned in the README.
+## No global state (no Zustand/Redux)
 
----
+Data is static mock JSON. Nothing needs to cross page boundaries. Local `useState` + `useMemo` + URL params covers every requirement without added complexity.
 
-## Component Library
+## URL state over local state for filters
 
-shadcn/ui
+The brief explicitly required direct-linkable filtered views and refresh persistence. `useSearchParams` from React Router serializes filter/search/sort into the URL with `replace: true` so history doesn't fill up on every keystroke.
 
-Reason:
-Provides accessible primitives while allowing complete visual control using Tailwind.
+## TanStack Virtual for both Workflows and Runs
 
----
+150 workflows rendered at once is manageable, but the brief asked me to defend the performance choice. 1500 runs is not manageable without virtualization — layout thrash and frame budget violations are measurable. `useVirtualizer` with `measureElement` handles variable-height cards correctly without a fixed `estimateSize` assumption.
 
-## State Management
+## Module-scope JSON import + simulated delay
 
-Local React state + URL search params
+JSON is imported once at module load and held in memory. Individual hooks do an async lookup into that store with a 300–800ms `setTimeout`. This gives realistic loading states without re-parsing on every navigation.
 
-Reason:
-Application complexity does not justify a global store.
+## `measureElement` on virtualizer rows
 
----
-
-## Performance
-
-Runs page will use virtualization.
-Workflows page will initially render normally and be evaluated against dataset size before introducing virtualization.
-
-Reason:
-Optimize based on actual scale requirements rather than prematurely.
-
-## Design Tokens
-
-Visual styling is centralized through shared design tokens to maintain consistency across all routes.
-
-## Layout Strategy
-
-A shared AppShell owns navigation and page layout.
-
-Reason:
-All assignment routes belong to the same dashboard experience.
+Fixed `estimateSize` causes row overlap when cards have variable heights (long titles, 2-line descriptions). `measureElement` reads actual `getBoundingClientRect().height` after each row renders and recalculates all subsequent `top` positions.
