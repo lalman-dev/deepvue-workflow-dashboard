@@ -41,7 +41,7 @@ export default function RunsPage() {
     () => (status === "all" ? runs : runs.filter((r) => r.status === status)),
     [runs, status],
   );
-  
+  // eslint-disable-next-line react-hooks/incompatible-library
   const rowVirtualizer = useVirtualizer({
     count: filteredRuns.length,
     getScrollElement: () => parentRef.current,
