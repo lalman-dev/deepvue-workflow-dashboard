@@ -1,8 +1,8 @@
-# Deepvue Workflow Dashboard
+# Workflow Dashboard
 
-A React + TypeScript dashboard implementing a simplified version of Deepvue's Workflows Library and Runs experience.
+A React + TypeScript dashboard implementing a simplified version of Workflows Library and Runs experience.
 
-Built as part of the Deepvue Frontend Intern take-home assignment.
+Built as part of the Frontend Intern take-home assignment.
 
 ## Quick Start
 
